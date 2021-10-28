@@ -1,0 +1,71 @@
+@use 'src/styles/vars';
+
+h2 {
+  font-weight: 900;
+  font-size: 1.5em;
+}
+
+.cardTrip {
+  max-width: 25%;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-bottom: 7rem;
+  border-radius: 0 0 1rem 1rem;
+
+  @media (max-width: 1023px) {    
+    max-width: 50%;
+    align-self: center;
+    margin-bottom: 4rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  @media (max-width: 425px) {    
+    max-width: 90%;
+    align-self: center;
+    margin-bottom: 4rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  &:hover {
+    box-shadow: vars.$colorGrey 4px 4px 10px;
+    transition: opacity 1s 0s ease;
+  }
+
+  &-photo {
+    border-radius: 10px 10px 0 0;
+  }
+
+  &-text {
+    min-width: 80%;
+    max-width: 100%;
+    max-height: 68%;
+    margin-top: -.5rem;
+    padding: .5rem;
+    background-color: white;
+    text-align: center;
+    border-radius: 0 0 1rem 1rem;
+    overflow: auto;
+  }
+
+  &-button {
+    border: inherit;
+    font-weight: 800;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.2s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #43C6AC 0%, #191654  51%, #43C6AC  100%);
+
+    &:hover{
+      background-position: right center;
+      color: #fff;
+      text-decoration: none;
+    }
+  }  
+}

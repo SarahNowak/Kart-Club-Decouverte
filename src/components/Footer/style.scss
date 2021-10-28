@@ -1,0 +1,50 @@
+@use 'src/styles/vars';
+
+.footer {
+  background-color: white;
+
+  &-list{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    border-top: 1px vars.$colorSecondary solid;
+
+    @media (max-width: 425px) {  
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 0 1rem 2rem;
+    } 
+   
+  }
+
+  &-link{
+    display: flex;
+    align-items: center;
+    color: vars.$colorPrimary;
+    font-weight: 800;
+    font-size: large;
+    text-shadow: 2px 2px 2px vars.$colorGrey;
+    margin-right: 3rem;
+  
+    &:hover {
+      color: vars.$colorTurquoise;
+      text-shadow: 2px 2px 2px vars.$colorGrey;
+    }
+
+    &-icon{
+      margin: 0 0.5rem;
+    } 
+
+    @media (max-width: 425px) {  
+      align-self: flex-start;
+    } 
+  }
+
+  &-text {
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px vars.$colorSecondary solid;
+    font-size: medium;
+  }
+
+}

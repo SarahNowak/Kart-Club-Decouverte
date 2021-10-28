@@ -1,0 +1,121 @@
+@use 'src/styles/vars';
+
+.tripInProgress {
+  position: absolute;
+  top: 82%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: rgba(vars.$colorGrey, 0.4);
+
+  @media (max-width: 1023px) {      
+    left: 50%; 
+    top: 77%;
+    width: 85%;
+  }
+
+  @media (min-width: 769px) {
+    max-height: 300px;
+  }
+
+  &-content {
+    display: flex;
+  }
+
+  &-title {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: vars.$colorTurquoise;
+    text-align: center;
+    background-color: vars.$colorGrey;
+    margin-bottom: 0;
+    padding: 1rem;
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  &-photo {
+    min-width: 250px;
+    max-width: 450px;
+    max-height: 250px;
+    display: flex;
+    border-radius: 0 0 0 1rem;
+
+    @media (min-width: 769px) {
+      max-height: 200px;
+    }
+  }
+
+  &-text {
+    line-height: 1.2em;
+    background-color: white;
+    padding: 1rem 2rem;
+    text-align: justify;
+    min-width: 250px;
+    max-width: 450px;
+    max-height: 250px;
+    overflow: auto;
+    border-radius: 0 0 1rem 0;
+
+    @media (max-width: 1023px) {    
+      padding: .5rem .5rem;
+    }
+
+    @media (min-width: 769px) {
+      max-height: 200px;
+    }
+
+    @media (max-width: 425px) {   
+      display: none;
+    }
+  }
+
+  &-circuit {
+
+    &-title {
+      font-weight: 900;
+      font-size: 1.5em;
+      color: vars.$colorPrimary;
+      text-align: center;
+    }
+  
+    &-adresse {
+      font-size: large;
+    }
+  
+    &-date {
+      font-size: large;
+      font-weight: 900;
+    }
+  }
+
+  &-button {
+    border: inherit;
+    font-weight: 800;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.2s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    background-image: linear-gradient(to right, #43C6AC 0%, #191654  51%, #43C6AC  100%);
+
+    @media (max-width: 425px) {   
+      display: absolute;
+    }
+
+    &:hover{
+      background-position: right center;
+      color: #fff;
+      text-decoration: none;
+    }
+  }  
+}
+
+
+

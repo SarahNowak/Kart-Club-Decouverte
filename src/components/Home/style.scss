@@ -1,0 +1,36 @@
+@use 'src/styles/vars';
+
+.lastTrips{
+
+  &-title {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    text-align: center;
+    border: white 1px solid;
+    padding: 1rem;
+    color: vars.$colorTurquoise;
+    text-align: center;
+    background-color: white;
+  }
+
+  &-cardsList {
+    margin-top: 7rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @media (max-width: 1023px) {       
+      flex-direction: column;
+      margin-top: 4rem;
+    }
+  }
+
+  &-content {
+    min-height: 700px;
+    height: auto;
+    background-image: url('src/assets/images/asphalt-dark.jpg');
+  }
+}
+

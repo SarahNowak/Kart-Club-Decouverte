@@ -1,0 +1,21 @@
+@use 'src/styles/vars';
+
+.button {
+  margin: 2rem 4rem 2rem 0;
+  padding: 0.5rem 1rem;
+  background-color: vars.$colorGrey;
+  color: vars.$colorTurquoise;
+  border: inherit;
+  border-radius: 4px;
+  font-weight: 800;
+
+  @media (max-width:425px){
+    margin: inherit;
+    margin-right: .5rem;
+  }
+
+  &:hover{
+    background-color: vars.$colorTurquoise;
+    color: vars.$colorGrey;
+  }
+}

@@ -1,0 +1,155 @@
+@use 'src/styles/vars';
+
+.section-container {
+  display: flex;
+  max-width: 95%;
+  @media (max-width: 1023px) {    
+    flex-direction: column;
+  } 
+
+}
+
+.trip {
+  // background-image: url('src/assets/images/asphalt-dark.jpg');
+  background: linear-gradient(#BBD2C5, #536976, #292E49);
+
+  &-map {
+    margin-left: 2.5rem;
+    margin-bottom: 2rem;
+    max-width: 480px;
+
+    @media (max-width: 1023px) {    
+      align-self: center;
+      margin-left: 0;
+      margin-bottom: 4rem;
+      max-width: 675px;
+    }
+
+    &-image{
+      border-radius: .5rem;
+    }
+  }
+
+  &-class-adult {
+    color: green;
+    font-weight: 800;
+    font-size: 1.3em;
+  }
+
+  &-tarif-adult {
+    color: green;
+    font-weight: 800;
+  }
+
+  &-class-young {
+    color: black;
+    font-weight: 800;
+    font-size: 1.3em;
+  }
+
+  &-tarif-young {
+    color: black;
+    font-weight: 800;
+  }
+
+  &-class-junior {
+    color: #E42A23;
+    font-weight: 800;
+    font-size: 1.3em;
+  }
+
+  &-tarif-junior {
+    color: #E42A23;
+    font-weight: 800;
+  }
+
+  &-summary {
+    max-width: 100%;
+    width: 850px;
+    text-align: justify;
+    margin: inherit;
+    margin: auto;
+    padding: 1rem;
+    overflow: auto;
+
+    &-adress {
+      font-size: 1.7em;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    @media (max-width: 425px) {    
+      padding: 1rem;
+    } 
+
+    &-title {
+      text-transform: uppercase;
+      color: vars.$colorPrimary;
+    }
+
+    &-formul {
+      font-size: 1.4em;
+      color: vars.$colorSecondary;
+    }
+  }
+
+  &-image {
+    width: 300px;
+    margin: 2rem;
+
+    @media (max-width: 1023px) {    
+      margin: 1rem;
+      width: 100%;
+    }
+  }
+  
+  &-title {
+    padding-top: 180px;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 3em;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-shadow:0 0 2px white,0 0 30px white,0px 0px 5px white, 0 0 150px white;
+    color: black;
+    letter-spacing: 0.3px;   
+
+    @media (max-width: 425px) {    
+      font-size: 2rem;
+      padding-top: 5rem;
+    }
+  }
+
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    line-height: 1.5em;
+        
+    &-summary {
+      max-width: 100%;
+      width: 900px;
+      max-height: 100vh;
+      overflow: auto;
+      margin-bottom: 4rem;
+      background-color: vars.$colorGrey;
+      border-radius: .5rem;
+
+      @media (max-width: 1023px) {    
+        margin-top: 1rem;
+      } 
+
+      @media (max-width: 425px) {    
+        margin-bottom: 2.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {    
+  .trip-container-image {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,86 @@
+@use 'src/styles/vars';
+
+.contact {
+  // background-image: url('src/assets/images/asphalt-dark.jpg');
+  background: linear-gradient(#BBD2C5, #536976, #292E49);
+  padding-top: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width:425px){
+    padding-top: 100px;
+  }
+
+  &-form {
+    border-radius: 10px;
+    background-color: #fff;
+    max-width: 700px;
+    width: 100%;
+    border: vars.$colorPrimary solid 1px;
+    padding: 2rem 4rem;
+    margin-bottom: 2rem;
+
+    @media (max-width:425px){
+      padding: 1rem;
+    }
+  }
+
+  &-title {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 3em;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-shadow:0 0 2px white,0 0 30px white,0px 0px 5px white, 0 0 150px white;
+    color: black;
+    letter-spacing: 0.3px;   
+
+    @media (max-width: 425px) {   
+      font-size: 2rem;
+    }
+  }
+
+  &-text {
+    color: white;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.5em;
+  }
+}
+
+.form {
+
+  &-select{
+    margin: .3rem 0;
+
+    select {
+      background-color: vars.$colorGrey;
+      padding: 0.7rem;
+      font-size: 1em;
+      border: 1px solid #ddd;
+      border-radius: .3em;
+      font-family: 'Roboto', sans-serif;
+    
+      &:focus {
+        outline: none; 
+        border-color: vars.$colorTurquoise;
+      }
+    }
+  }
+
+  &-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  &-input {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}

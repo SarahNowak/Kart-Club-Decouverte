@@ -1,0 +1,40 @@
+@use 'src/styles/vars';
+
+@media (max-width:425px){
+  .nav{
+    display: none;
+  }
+}
+
+.nav.active {
+  background-color: white;
+}
+
+.nav {
+  background-color: rgba(vars.$colorGrey, 0.7);
+
+  &-list{
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    border: 1px vars.$colorSecondary solid;
+  }
+
+  &-link{
+    text-align: center;
+    color: vars.$colorPrimary;
+    font-weight: 800;
+    font-size: large;
+    text-shadow: 2px 2px 2px vars.$colorGrey;
+ 
+    &:hover {
+      color: vars.$colorTurquoise;
+      text-shadow: 2px 2px 2px vars.$colorGrey;
+    }
+  }
+}
+
+
+
+
+

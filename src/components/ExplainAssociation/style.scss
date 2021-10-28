@@ -1,0 +1,44 @@
+@use 'src/styles/vars';
+
+.modal-style {
+  background: linear-gradient(90deg, #8e9eab, #eef2f3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  overflow: auto;
+  border: 2px solid #000;
+  border-radius: 5px 5px 5px 5px;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width:425px){
+    width: 95%;
+  }
+}
+
+.modal-modal {
+
+  &-title {
+    text-align: center;
+    padding-top: 2rem;
+  }
+
+  &-description {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    width: 80%;
+    align-self: center;
+  }
+}
+
+.explainAssociation-container {
+  display: flex;
+  justify-content: center;
+}
+
+.flag {
+  width: 200px;
+}

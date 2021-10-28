@@ -1,0 +1,78 @@
+@use 'src/styles/vars';
+
+.presentation{
+  background-image: url('src/assets/images/presentation.jpg');
+  border-bottom: 4.5rem solid black;
+  background-size: cover;
+  width: 100%;
+  height: 120vh;
+
+  @media (max-width: 1023px) {    
+      height: 105vh;
+  }
+
+  &-container{
+    position: absolute;
+    top: 25%;
+    right:5%;
+    min-width: 250px;
+    max-width: 600px;
+    min-height: 225px;
+    max-height: 600px;
+    padding: 2rem;
+    border: solid 1px rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    background: linear-gradient(rgba(#00416A, 0.4), rgba(#E4E5E6, 0.4));
+
+    @media (max-width: 768px) {
+      top: 25%;
+      right: 2%;
+      max-width: 450px;
+    }
+
+    @media (max-width: 425px) {      
+      top: 13%;
+      width: 100%;
+      max-height: 300px;
+      right: 0;
+    }
+  }
+}
+
+.summary{
+  &-title{
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    text-shadow: 2px 2px 2px black;
+
+    @media (max-width: 425px) {      
+      font-size: 2em;
+    }
+
+    &-green {
+      color: green;
+    }
+
+    &-white {
+      color: white;
+    }
+
+    &-red {
+      color: red;
+    }
+  }
+
+  &-text{
+    line-height: 1.5em;
+    color: black;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+
+    @media (max-width: 425px) {      
+      color: white;
+    }
+  }
+}
