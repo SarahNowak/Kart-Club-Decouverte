@@ -1,22 +1,29 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './style.scss';
-import photoCircuit from 'src/assets/images/circuit-plesse.jpg';
 import { Link } from 'react-router-dom';
 
-const CardTrip = () => (
+const CardTrip = ({
+  link,
+  imgCard,
+  circuit,
+  title,
+  adress,
+  date,
+}) => (
   <div className="cardTrip">
-    <Link to="/sortie/circuit-solokart" className="cardTrip-link">
-      <img className="cardTrip-photo" src={photoCircuit} alt="Circuit" />
+    <Link to={`/sortie/${link}`} className="cardTrip-link">
+      <img className="cardTrip-photo" src={imgCard} alt="Circuit" />
       <div className="cardTrip-text">
-        <h2 className="cardTrip-circuit-title">Circuit SOLOKART</h2>
+        <h2 className="cardTrip-circuit-title">{circuit}</h2>
         <p className="cardTrip-circuit-presentation">
-          Le plus grand circuit d’Europe !
+          {title}
         </p>
         <p className="cardTrip-circuit-adresse">
-          Adresse : Lieu-dit « La Piardière », 44630 Plessé
+          {adress}
         </p>
-        <p className="cardTrip-circuit-date">RDV à 9h30 le dimanche 4 Juillet 2021</p>
+        <p className="cardTrip-circuit-date">{date}</p>
         <p />
         <button className="cardTrip-button" type="button">En savoir plus</button>
       </div>
@@ -25,7 +32,12 @@ const CardTrip = () => (
 );
 
 CardTrip.propTypes = {
-
+  imgCard: PropTypes.string.isRequired,
+  circuit: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  adress: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  link: PropTypes.number.isRequired,
 };
 
 export default CardTrip;

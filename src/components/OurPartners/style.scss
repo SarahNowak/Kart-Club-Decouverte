@@ -1,8 +1,9 @@
 @use 'src/styles/vars';
 
 .ourPartners {
-  // background-image: url('src/assets/images/asphalt-dark.jpg');
-  background: linear-gradient(#BBD2C5, #536976, #292E49);
+  // background: linear-gradient(#BBD2C5, #536976, #292E49);
+  background-image: url('src/assets/images/background-black.jpg');
+  background-size: cover;
   padding-top: 180px;
   @media (max-width: 425px) {   
     padding-top: 100px;
@@ -39,8 +40,7 @@
     font-size: 3em;
     font-weight: 900;
     text-transform: uppercase;
-    text-shadow:0 0 2px white,0 0 30px white,0px 0px 5px white, 0 0 150px white;
-    color: black;
+    color: white;
     letter-spacing: 0.3px;   
   
     @media (max-width: 425px) {   
@@ -67,6 +67,7 @@
   }
 
   &-title {
+    color: white;
     font-size: 2em;
     margin-bottom: 2rem;
   }
@@ -106,11 +107,12 @@
     line-height: 1.2em;
     margin-top: 2rem;
     margin-bottom: 1rem;
-    color: vars.$colorPrimary;
+    color: vars.$colorTurquoise;
   }
 
   &-details {
+    font-size: 1.2em;
     font-weight: 900;
-    color: black;
+    color: vars.$colorGrey;
   }
 }

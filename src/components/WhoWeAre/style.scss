@@ -3,7 +3,9 @@
 .whoWeAre {
   
   &-container{
-    background: linear-gradient(#BBD2C5, #536976, #292E49);
+    // background: linear-gradient(#BBD2C5, #536976, #292E49);
+    background-image: url('src/assets/images/background-black.jpg');
+    background-size: cover;
     padding-top: 180px;
     min-height: 90vh;
     max-height: 100%;
@@ -19,8 +21,7 @@
     font-size: 3em;
     font-weight: 900;
     text-transform: uppercase;
-    text-shadow:0 0 2px white,0 0 30px white,0px 0px 5px white, 0 0 150px white;
-    color: black;
+    color: white;
     letter-spacing: 0.3px;   
   
     @media (max-width: 1023px) {    

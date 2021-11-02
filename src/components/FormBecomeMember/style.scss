@@ -2,7 +2,7 @@
 
 .formBecomeMember{
     border-radius: 10px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 10px;
     border: vars.$colorPrimary solid 1px;
     margin: auto;
@@ -55,4 +55,30 @@
   margin: 2rem;
 }
 
+.photoForm-input {
+  font-family: 'Zen Kurenaido', sans-serif;
+  display: flex;
+}
 
+.MuiButtonBase-root { 
+  border: inherit;
+  font-weight: 800;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.2s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #43C6AC 0%, #191654  51%, #43C6AC  100%);
+
+  &:hover{
+    background-position: right center;
+    transition: 0.8s;
+  }
+}
+
+.MuiButton-label {
+font-family: 'Zen Kurenaido', sans-serif;
+}

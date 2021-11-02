@@ -28,7 +28,7 @@ const FormBecomeMember = () => (
             Photo(carte de membre)
           </label>
           <input
-            className="newAvatarForm-input"
+            className="photoForm-input"
             type="file"
             id="avatarPicture"
             name="avatarPicture"

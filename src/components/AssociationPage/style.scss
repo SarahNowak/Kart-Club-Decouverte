@@ -2,8 +2,9 @@
 
 .associationPage {
   padding-top: 180px;
-  height: 95vh;
-  background: linear-gradient(#BBD2C5, #536976, #292E49);
+  // background: linear-gradient(#BBD2C5, #536976, #292E49);
+  background-image: url('src/assets/images/background-black.jpg');
+  background-size: cover;
   @media (max-width:425px){
     padding-top: 100px;
   }
@@ -14,12 +15,18 @@
     font-size: 3em;
     font-weight: 900;
     text-transform: uppercase;
-    text-shadow:0 0 2px white,0 0 30px white,0px 0px 5px white, 0 0 150px white;
-    color: black;
+    color: white;
     letter-spacing: 0.3px;   
 
     @media (max-width: 425px) {   
       font-size: 2rem;
     }
+  }
+
+  &-content {
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
 }

@@ -1,12 +1,12 @@
-// import { connect } from 'react-redux';
-// import App from 'src/components/App';
+import { connect } from 'react-redux';
+import App from 'src/components/App';
 
-// const mapStateToProps = (state) => ({
-//   loading: state.recipes.loading,
-// });
+const mapStateToProps = (state) => ({
 
-// const mapDispatchToProps = () => ({
+});
 
-// });
+const mapDispatchToProps = () => ({
 
-// export default connect(mapStateToProps, mapDispatchToProps)(App);
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

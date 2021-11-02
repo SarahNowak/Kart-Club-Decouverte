@@ -1,6 +1,7 @@
 @use 'src/styles/vars';
 
 .button {
+  font-family: 'Zen Kurenaido', sans-serif;
   margin: 2rem 4rem 2rem 0;
   padding: 0.5rem 1rem;
   background-color: vars.$colorGrey;
@@ -8,6 +9,7 @@
   border: inherit;
   border-radius: 4px;
   font-weight: 800;
+  width: 105px;
 
   @media (max-width:425px){
     margin: inherit;

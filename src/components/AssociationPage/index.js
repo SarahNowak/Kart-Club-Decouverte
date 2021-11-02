@@ -8,10 +8,10 @@ import './style.scss';
 const AssociationPage = () => (
   <main className="associationPage">
     <h1 className="associationPage-title"> L' association </h1>
-    <div className="content-list">
-      {/* {datas.map((data) => (
-        <ExplainAssociation key={data.id} {...data} />
-      ))} */}
+    <div className="associationPage-content">
+      {datas.map((data) => (
+        <ExplainAssociation className="explainAssociation" key={data.id} {...data} />
+      ))}
     </div>
   </main>
 );

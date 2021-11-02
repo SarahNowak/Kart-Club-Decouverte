@@ -9,16 +9,16 @@ import PropTypes from 'prop-types';
 // == Import components
 import AppHeader from 'src/containers/AppHeader';
 import WhoWeAre from 'src/components/WhoWeAre';
+import Contact from 'src/containers/Contact';
+import Trip from 'src/containers/Trip';
+import TripsList from 'src/containers/TripsList';
 import Home from '../Home';
 import Footer from '../Footer';
 import Error from '../Error';
 import AssociationPage from '../AssociationPage';
-import TripsList from '../TripsList';
 import BecomeMember from '../BecomeMember';
 import OurPartners from '../OurPartners';
-import Trip from '../Trip';
-import TripInProgressPage from '../TripInProgressPage';
-import Contact from '../Contact';
+// import TripInProgressPage from '../TripInProgressPage';
 // import Loading from './Loading';
 
 // == Composant
@@ -54,12 +54,12 @@ const App = () => {
         <Route path="/nos-partenaires" exact>
           <OurPartners />
         </Route>
-        <Route path="/sortie/circuit-solokart" exact>
+        <Route path="/sortie/:id" exact>
           <Trip />
         </Route>
-        <Route path="/sortie-du-mois" exact>
+        {/* <Route path="/sortie-du-mois" exact>
           <TripInProgressPage />
-        </Route>
+        </Route> */}
         <Route path="/nous-contacter" exact>
           <Contact />
         </Route>

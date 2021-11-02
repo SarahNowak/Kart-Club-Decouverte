@@ -25,11 +25,20 @@
     color: vars.$colorPrimary;
     font-weight: 800;
     font-size: large;
-    text-shadow: 2px 2px 2px vars.$colorGrey;
- 
+    text-shadow: .5px .5px .5px vars.$colorGrey;
+
+    
     &:hover {
       color: vars.$colorTurquoise;
-      text-shadow: 2px 2px 2px vars.$colorGrey;
+      text-shadow: .5px .5px .5px vars.$colorPrimary;
+      transition: 0.2s;
+      transform: scale(1.4);
+    }
+
+    &--active {
+      transform: scale(1.4);
+      color: vars.$colorTurquoise;
+      text-shadow: .5px .5px .5px vars.$colorPrimary;
     }
   }
 }
