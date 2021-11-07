@@ -2,10 +2,10 @@ import { connect } from 'react-redux';
 import TripsList from 'src/components/TripsList';
 
 const mapStateToProps = (state) => ({
-  listOfTrips: state.trips.list,
+  listOfTrips: state.trips.listOfTrips,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = () => ({
 
 });
 

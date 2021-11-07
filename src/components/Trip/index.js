@@ -1,106 +1,127 @@
 import React from 'react';
 
-import photoCircuit from 'src/assets/images/circuit-plesse.jpg';
-import map from 'src/assets/images/map.png';
+import map from 'src/assets/images/map.jpg';
 import PropTypes from 'prop-types';
 
 import './style.scss';
+import { Link } from 'react-router-dom';
 
-const Trip = ({ trip }) => {
-  console.log(trip);
-  return (
-    <main className="trip">
-      <h1 className="trip-title">Sortie circuit Solokart</h1>
-      <div className="trip-container">
-        <div className="trip-container-image">
-          <img className="trip-image" src={photoCircuit} alt="Circuit" />
-          <img className="trip-image" src={photoCircuit} alt="Circuit" />
-          <img className="trip-image" src={photoCircuit} alt="Circuit" />
-        </div>
-        <section className="section-container">
-          <div className="trip-container-summary">
-            <div className="trip-summary">
-              <h2 className="trip-summary-title">
-                Le plus grand circuit d’Europe !
-              </h2>
-              <p className="trip-summary-description">
-                Une 11ème sortie sur la plus grande piste d’Europe.
-                Un circuit de 1350m, un deuxième de 800m.
-                Matériel tout neuf pour les Juniors en 270cc !
-                Et un héliport pour ceux qui préfèrent arriver en hélicoptère !
-                Sensations et vitesse assurées.
-              </p>
-              <p className="trip-summary-adress">
-                Adresse : Lieu-dit « La Piardière », 44630 Plessé
-              </p>
-              <br />
-              <h3 className="trip-summary-formul">
-                FORMULES COURSE SPRINT Adultes & Jeunes – 30min de roulage/pilote
-              </h3>
-              <p className="trip-formul-adult">
-                <span className="trip-class-adult">ADULTES : à partir de 15 ans : Matériel 390cc 14cv </span>
-                <br />
-                Accueil & briefing
-                <br />
-                Essais libres 10 min
-                <br />
-                Essais 10 min
-                <br />
-                Finale 10 min
-                <br />
-                Remise de trophées
-                <br />
-                <span className="trip-tarif-adult"> Tarif membre : 55€  – Tarif extérieur : 65€ </span>
-              </p>
-              <p className="trip-formul-young">
-                <span className="trip-class-young">JEUNES : à partir de 12 ans : Matériel 270cc 9cv </span>
-                <br />
-                Accueil & briefing
-                <br />
-                Essais libres 10 min
-                <br />
-                Essais chrono 10 min
-                <br />
-                Finale 10 min
-                <br />
-                Remise de trophées
-                <br />
-                <span className="trip-tarif-young">Tarif membre : 40€  – Tarif extérieur : 47€ </span>
-              </p>
-              <p className="trip-formul-junior">
-                <span className="trip-class-junior">JUNIORS : de 7 à 10 ans :  Matériel 160cc 4,5cv </span>
-                <br />
-                Séances de location
-                <br />
-                10 min
-                <br />
-                Possibilité jusqu’à 3 sessions
-                <br />
-                <span className="trip-tarif-junior">Tarif négocié pour tous membres et extérieurs : 10€ </span>
-              </p>
-              <p className="trip-info">
-                PREVOIR VOS MASQUES qui sont obligatoires dans le bâtiment
-                et dans les casques de location ou une cagoule.
-              </p>
-            </div>
-          </div>
-          <div className="trip-map">
-            <img className="trip-map-image" src={map} alt="Plan du circuit" />
-          </div>
-        </section>
+const Trip = ({ trip }) => (
+  <main className="trip">
+    <button className="trip-button" type="button">
+      <Link to="/les-sorties" className="cardTrip-link">
+        ↩
+        Retour aux sorties
+      </Link>
+    </button>
+    <h1 className="trip-title">{trip.circuit}</h1>
+    <div className="trip-container">
+      <div className="trip-container-image">
+        <img className="trip-image" src={`/images/${trip.imgCard}`} alt="Circuit" />
+        <img className="trip-image" src={`/images/${trip.imgCard}`} alt="Circuit" />
+        <img className="trip-image" src={`/images/${trip.imgCard}`} alt="Circuit" />
       </div>
-    </main>
-  );
-};
+      <section className="section-container">
+        <div className="trip-container-summary">
+          <div className="trip-summary">
+            <h2 className="trip-summary-title">
+              {trip.title}
+            </h2>
+            <div className="trip-summary-description">
+              {trip.description.map((info) => (
+                <ul>
+                  <li>{info} </li>
+                </ul>
+              ))}
+            </div>
+            <p className="trip-summary-adress">
+              {trip.adress}
+            </p>
+            <br />
+            <h3 className="trip-summary-formul">
+              FORMULES Adultes & Jeunes – 30min de roulage/pilote
+            </h3>
+            <div className="trip-formul-adult">
+              <span className="trip-class-adult">ADULTES : à partir de {trip.classAdult} ans : Matériel {trip.materialAdult}</span>
+              {trip.sessionAdult.map((info) => (
+                <ul>
+                  <li>{info}</li>
+                </ul>
+              ))}
+              <span className="trip-tarif-adult"> Tarif membre : {trip.tarifAdultMember}€  – Tarif extérieur : {trip.tarifAdultExt}€ – Plein tarif : {trip.tarifAdult}€ </span>
+            </div>
+            { trip.classYoung !== ''
+              ? (
+                <div className="trip-formul-young">
+                  <span className="trip-class-young">JEUNES : à partir de {trip.classYoung} ans : Matériel {trip.materialYoung} </span>
+                  {trip.sessionYoung.map((info) => (
+                    <ul>
+                      <li>{info}</li>
+                    </ul>
+                  ))}
+                  <span className="trip-tarif-young">Tarif membre : {trip.tarifYoungMember}€  – Tarif extérieur : {trip.tarifYoungExt}€ – Plein tarif : {trip.tarifYoung}€</span>
+                </div>
+              )
+              : ''}
+            { trip.classMinJunior !== ''
+              ? (
+                <div className="trip-formul-junior">
+                  <span className="trip-class-junior">JUNIORS : de {trip.classMinJunior} à {trip.classMaxJunior} ans :  Matériel {trip.materialJunior} </span>
+                  {trip.sessionJunior.map((info) => (
+                    <ul>
+                      <li>{info}</li>
+                    </ul>
+                  ))}
+                  <span className="trip-tarif-junior">Tarif membre : {trip.tarifJuniorMember}€  – Tarif extérieur : {trip.tarifJuniorExt}€ – Plein tarif : {trip.tarifJunior}€</span>
+                </div>
+              )
+              : ''}
+            <p className="trip-info">
+              PREVOIR VOS MASQUES qui sont obligatoires dans le bâtiment
+              et dans les casques de location ou une cagoule.
+            </p>
+          </div>
+        </div>
+        <div className="trip-map">
+          <img className="trip-map-image" src={map} alt="Plan du circuit" />
+        </div>
+      </section>
+    </div>
+  </main>
+);
 
 Trip.propTypes = {
   trip: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    circuit: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
+    adress: PropTypes.string.isRequired,
+    description: PropTypes.array.isRequired,
+    imgCard: PropTypes.string.isRequired,
+    classAdult: PropTypes.string,
+    materialAdult: PropTypes.string,
+    sessionAdult: PropTypes.array,
+    tarifAdultMember: PropTypes.string,
+    tarifAdultExt: PropTypes.string,
+    tarifAdult: PropTypes.string,
+    classYoung: PropTypes.string,
+    materialYoung: PropTypes.string,
+    sessionYoung: PropTypes.array,
+    tarifYoungMember: PropTypes.string,
+    tarifYoungExt: PropTypes.string,
+    tarifYoung: PropTypes.string,
+    classMinJunior: PropTypes.string,
+    classMaxJunior: PropTypes.string,
+    materialJunior: PropTypes.string,
+    sessionJunior: PropTypes.array,
+    tarifJuniorMember: PropTypes.string,
+    tarifJuniorExt: PropTypes.string,
+    tarifJunior: PropTypes.string,
   }),
 };
 
 Trip.defaultProps = {
-  recipe: null,
+  trip: null,
 };
 
 export default Trip;

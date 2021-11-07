@@ -5,9 +5,14 @@ import Trip from 'src/components/Trip';
 
 import { findTrip } from 'src/selectors';
 
-const mapStateToProps = (state, ownProps) => ({
-  trip: findTrip(state.trips.list, ownProps.match.params.id),
-});
+const mapStateToProps = (state, ownProps) => {
+  console.log(state.trips.listOfTrips);
+  console.log(ownProps.match.params.id);
+
+  return ({
+    trip: findTrip(state.trips.listOfTrips, ownProps.match.params.id),
+  });
+};
 
 const mapDispatchToProps = {};
 

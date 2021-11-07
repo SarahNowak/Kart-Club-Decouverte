@@ -34,6 +34,7 @@ const Field = ({
         type={type}
         placeholder={placeholder}
         min={minMax}
+        required
       />
 
       <label

@@ -1,6 +1,7 @@
 @use 'src/styles/vars';
 
 .explainAssociation {
+  transition: transform 0.5s;
 
   &:hover {
     opacity: .5;
@@ -43,7 +44,7 @@
 .modal{
 
   &-button {
-    font-size: 3em;
+    font-size: 2em;
     width: 45px;
     height: 50px;
     display: flex;
@@ -51,7 +52,7 @@
     color: vars.$colorPrimary;
     border: none;
     background-color: inherit;
-    margin: .5rem 1rem 0 0;
+    margin: .5rem 0;
   }
 
   &-style {
@@ -69,7 +70,7 @@
     flex-direction: column;
   
     @media (max-width:425px){
-      width: 95%;
+      width: 90%;
     }
 }
 
@@ -79,11 +80,11 @@
 
   &-title {
     text-align: center;
-    padding-top: 2rem;
+    padding-top: .5rem;
   }
 
   &-description {
-    padding-top: 3rem;
+    padding-top: 2rem;
     padding-bottom: 3rem;
     width: 80%;
     align-self: center;

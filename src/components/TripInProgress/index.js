@@ -16,7 +16,7 @@ const TripInProgress = ({
     <Link to={`/sortie/${link}`} className="tripInProgress-link">
       <h1 className="tripInProgress-title">La sortie du mois</h1>
       <div className="tripInProgress-content">
-        <img className="tripInProgress-photo" src={imgCard} alt="Circuit" />
+        <img className="tripInProgress-photo" src={`/images/${imgCard}`} alt="Circuit" />
         <div className="tripInProgress-text">
           <h2 className="tripInProgress-circuit-title">{circuit}</h2>
           <p className="tripInProgress-circuit-presentation">

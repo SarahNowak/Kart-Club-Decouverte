@@ -27,6 +27,7 @@ const FieldArea = ({
         rows="20"
         cols="100"
         placeholder={placeholder}
+        required
       />
 
       <label

@@ -32,7 +32,7 @@ td {
 
     @media (max-width: 425px) {    
       font-size: 2rem;
-      padding-top: 5rem;
+      padding-top: 6rem;
     }
   }
 
@@ -61,7 +61,8 @@ td {
     }
 
     &-presentation {
-      font-size: 1.4em;
+      text-align: center;
+      font-size: 1.2em;
       line-height: 1.2em;
       color: white;
     }
@@ -130,6 +131,6 @@ td {
   }
 
   .payment-title {
-    text-shadow: 2px 2px 8px vars.$colorGrey;;
+    color: vars.$colorGrey;
   }
 }

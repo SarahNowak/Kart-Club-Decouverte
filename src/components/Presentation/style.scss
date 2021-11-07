@@ -1,6 +1,7 @@
 @use 'src/styles/vars';
 
 .presentation{
+  display: inline-block;
   background-image: url('src/assets/images/presentation.jpg');
   border-bottom: 4.5rem solid black;
   background-size: cover;
@@ -13,8 +14,8 @@
 
   &-container{
     position: absolute;
-    top: 25%;
-    right:5%;
+    top: 28%;
+    right: 1%;
     min-width: 250px;
     max-width: 600px;
     min-height: 225px;
@@ -24,12 +25,10 @@
     border-radius: 1rem;
     background: linear-gradient(rgba(#00416A, 0.4), rgba(#E4E5E6, 0.4));
 
-    @media (max-width: 768px) {
-      top: 25%;
-      right: 2%;
-      max-width: 450px;
+    @media(min-width: 426px) and (max-width: 1024px) {
+      position: inherit;
+      margin: 50% auto 0 auto;
     }
-
     @media (max-width: 425px) {      
       top: 13%;
       width: 100%;
@@ -44,8 +43,12 @@
     text-align: center;
     font-size: 3em;
     font-weight: bold;
-    margin-bottom: 1.2rem;
+    margin: auto;
     text-shadow: 2px 2px 2px black;
+    overflow: hidden;
+    white-space: nowrap;  
+    animation: 
+      typing 2s steps(50, end);
 
     @media (max-width: 425px) {      
       font-size: 2em;
@@ -66,13 +69,16 @@
 
   &-text{
     line-height: 1.5em;
-    color: black;
+    color: white;
+    text-shadow: 2px 2px 2px black;
     font-size: 1.2em;
     font-weight: bold;
     text-align: center;
-
-    @media (max-width: 425px) {      
-      color: white;
-    }
   }
 }
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+

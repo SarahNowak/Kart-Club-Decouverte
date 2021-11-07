@@ -11,6 +11,13 @@ const BurgerDropdownMenu = ({ className, changeIsOpen }) => {
 
   return (
     <div className={className}>
+      <button
+        className="modal-button"
+        aria-label="fermer"
+        type="button"
+        onClick={handleClose}
+      >✘
+      </button>
       <Link to="/" className={`${className}-items`} onClick={handleClose}>Accueil</Link>
       <Link to="/association" className={`${className}-items`} onClick={handleClose}>L'association</Link>
       <Link to="/les-sorties" className={`${className}-items`} onClick={handleClose}>Les sorties</Link>

@@ -9,5 +9,5 @@ export const createTripOfMonth = (allTrips) => {
 };
 
 export function findTrip(trips, searchedId) {
-  return trips.find((testedTrip) => testedTrip.id === searchedId);
+  return trips.find((testedTrip) => testedTrip.id == searchedId);
 }

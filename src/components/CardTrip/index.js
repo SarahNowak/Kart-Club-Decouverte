@@ -14,7 +14,7 @@ const CardTrip = ({
 }) => (
   <div className="cardTrip">
     <Link to={`/sortie/${link}`} className="cardTrip-link">
-      <img className="cardTrip-photo" src={imgCard} alt="Circuit" />
+      <img className="cardTrip-photo" src={`/images/${imgCard}`} alt="Circuit" />
       <div className="cardTrip-text">
         <h2 className="cardTrip-circuit-title">{circuit}</h2>
         <p className="cardTrip-circuit-presentation">

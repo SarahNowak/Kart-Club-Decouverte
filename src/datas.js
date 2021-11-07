@@ -51,7 +51,7 @@ export default [
   {
     id: 4,
     img: 'images/reglement.jpg',
-    title: 'LE RÈGLEMENT INTÉRIEUR DE L’ASSOCIATION K.C.D',
+    title: 'LE RÈGLEMENT INTÉRIEUR DE L’ASSOCIATION',
     presentation: [
       'Cette association doit respecter dans son fonctionnement, et dans son développement les statuts établis et déclarés en préfecture, (loi du 1 juillet 1901).',
       'Toute personne étant membre de cette association doit également respecter les règles et le  fonctionnement de celle-ci.',
