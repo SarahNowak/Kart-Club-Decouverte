@@ -51,7 +51,7 @@
     } 
 
     &-image{
-      border-radius: .5rem;   
+      border-radius: .5rem; 
     }
   }
 
@@ -134,9 +134,10 @@
     }
   }
   &-image {
-    width: 300px;
     margin: 2rem;
-
+    height: 225px;
+    width: 350px;
+    
     @media (max-width: 1023px) {    
       margin: 1rem;
       width: 90%;

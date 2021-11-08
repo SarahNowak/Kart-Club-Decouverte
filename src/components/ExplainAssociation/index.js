@@ -19,8 +19,8 @@ const ExplainAssociation = ({
           src={img}
           alt={title}
           loading="lazy"
-          onClick={handleOpen}
           className="explainAssociation-image"
+          onClick={handleOpen}
         />
         <p className="explainAssociation-title">
           {title}

@@ -17,9 +17,12 @@ const Trip = ({ trip }) => (
     <h1 className="trip-title">{trip.circuit}</h1>
     <div className="trip-container">
       <div className="trip-container-image">
+        {/* <img className="trip-image" src={`/images/${trip.imgCard}`} alt="Circuit" />
         <img className="trip-image" src={`/images/${trip.imgCard}`} alt="Circuit" />
-        <img className="trip-image" src={`/images/${trip.imgCard}`} alt="Circuit" />
-        <img className="trip-image" src={`/images/${trip.imgCard}`} alt="Circuit" />
+        <img className="trip-image" src={`/images/${trip.imgCard}`} alt="Circuit" /> */}
+        {trip.photosTrip.map((info) => (
+          <img className="trip-image" src={`/images/${info}`} alt="Circuit" />
+        ))}
       </div>
       <section className="section-container">
         <div className="trip-container-summary">
@@ -117,6 +120,7 @@ Trip.propTypes = {
     tarifJuniorMember: PropTypes.string,
     tarifJuniorExt: PropTypes.string,
     tarifJunior: PropTypes.string,
+    photosTrip: PropTypes.string,
   }),
 };
 

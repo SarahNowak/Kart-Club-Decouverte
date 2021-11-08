@@ -48,6 +48,11 @@ export default [
       '3 sessions de 10 min',
       'Podium',
     ],
+    photosTrip: [
+      'karting-electrique-nantes-trip-photo1.jpg',
+      'karting-electrique-nantes-trip-photo2.jpg',
+      'karting-electrique-nantes-trip-photo3.jpg',
+    ],
   },
   {
     id: 5,
@@ -92,6 +97,11 @@ export default [
     tarifJunior: '',
     sessionJunior: [
       '3 sessions de 10 min',
+    ],
+    photosTrip: [
+      'jovikart-trip-photo1.jpg',
+      'jovikart-trip-photo2.jpg',
+      'jovikart-trip-photo3.jpg',
     ],
   },
   {
@@ -141,6 +151,11 @@ export default [
       'Accueil & briefing',
       '3 sessions de 10 min',
     ],
+    photosTrip: [
+      'solokart-trip-photo1.jpg',
+      'solokart-trip-photo2.jpg',
+      'solokart-trip-photo3.jpg',
+    ],
   },
   {
     id: 3,
@@ -187,6 +202,11 @@ export default [
     sessionJunior: [
       '',
     ],
+    photosTrip: [
+      'lmc-trip-photo1.jpg',
+      'lmc-trip-photo2.jpg',
+      'lmc-trip-photo3.jpg',
+    ],
   },
   {
     id: 2,
@@ -231,6 +251,11 @@ export default [
       'Course : 10 min',
       'Finale : 10 min',
       'Podium',
+    ],
+    photosTrip: [
+      'mrk-trip-photo1.jpg',
+      'mrk-trip-photo2.jpg',
+      'mrk-trip-photo3.jpg',
     ],
   },
 ];
