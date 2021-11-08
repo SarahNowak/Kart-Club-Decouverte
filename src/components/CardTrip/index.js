@@ -25,8 +25,9 @@ const CardTrip = ({
         </p>
         <p className="cardTrip-circuit-date">{date}</p>
         <p />
-        <button className="cardTrip-button" type="button">En savoir plus</button>
+        {/* <button className="cardTrip-button" type="button">En savoir plus</button> */}
       </div>
+      <button className="cardTrip-button" type="button">En savoir plus</button>
     </Link>
   </div>
 );

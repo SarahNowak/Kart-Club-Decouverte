@@ -6,10 +6,10 @@
   // background: linear-gradient(#BBD2C5, #536976, #292E49);
   
   &-container {
-    padding-top: 3rem;
+    padding-top: 2rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
   }
   
   &-title {
