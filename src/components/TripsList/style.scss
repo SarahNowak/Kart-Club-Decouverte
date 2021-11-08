@@ -3,6 +3,7 @@
 .tripsList {
   background-image: url('src/assets/images/background-black.jpg');
   background-size: cover;
+  min-height: 95vh;
   
   &-container {
     display: flex;
