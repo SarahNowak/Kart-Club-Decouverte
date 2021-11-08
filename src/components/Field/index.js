@@ -31,7 +31,6 @@ const Field = ({
         onChange={handleChange}
         className="field-input"
         id={inputId}
-        type={type}
         placeholder={placeholder}
         min={minMax}
         required
@@ -52,7 +51,6 @@ Field.propTypes = {
   value: PropTypes.string,
   placeholder: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  type: PropTypes.string.isRequired,
 };
 
 // Valeurs par défaut pour les props

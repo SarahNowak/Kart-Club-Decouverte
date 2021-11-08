@@ -3,10 +3,8 @@
 .tripsList {
   background-image: url('src/assets/images/background-black.jpg');
   background-size: cover;
-  // background: linear-gradient(#BBD2C5, #536976, #292E49);
   
   &-container {
-    padding-top: 2rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;

@@ -3,6 +3,7 @@ import TripsList from 'src/components/TripsList';
 
 const mapStateToProps = (state) => ({
   listOfTrips: state.trips.listOfTrips,
+  searchedWord: state.searchTrips.searchForm,
 });
 
 const mapDispatchToProps = () => ({
