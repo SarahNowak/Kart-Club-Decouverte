@@ -1,10 +1,10 @@
 import React from 'react';
 
-import map from 'src/assets/images/map.jpg';
 import PropTypes from 'prop-types';
 
 import './style.scss';
 import { Link } from 'react-router-dom';
+import Map from 'src/components/Map';
 
 const Trip = ({ trip }) => (
   <main className="trip">
@@ -17,9 +17,6 @@ const Trip = ({ trip }) => (
     <h1 className="trip-title">{trip.circuit}</h1>
     <div className="trip-container">
       <div className="trip-container-image">
-        {/* <img className="trip-image" src={`/images/${trip.imgCard}`} alt="Circuit" />
-        <img className="trip-image" src={`/images/${trip.imgCard}`} alt="Circuit" />
-        <img className="trip-image" src={`/images/${trip.imgCard}`} alt="Circuit" /> */}
         {trip.photosTrip.map((info) => (
           <img className="trip-image" src={`/images/${info}`} alt="Circuit" />
         ))}
@@ -39,6 +36,9 @@ const Trip = ({ trip }) => (
             </div>
             <p className="trip-summary-adress">
               {trip.adress}
+            </p>
+            <p className="trip-summary-date">
+              {trip.date}
             </p>
             <br />
             <h3 className="trip-summary-formul">
@@ -85,8 +85,8 @@ const Trip = ({ trip }) => (
             </p>
           </div>
         </div>
-        <div className="trip-map">
-          <img className="trip-map-image" src={map} alt="Plan du circuit" />
+        <div className="trip-containerMap">
+          <Map className="mapContainer" coordinates={trip.coordinates} city={trip.adress} imgMap={trip.imgCard} />
         </div>
       </section>
     </div>
@@ -120,7 +120,9 @@ Trip.propTypes = {
     tarifJuniorMember: PropTypes.string,
     tarifJuniorExt: PropTypes.string,
     tarifJunior: PropTypes.string,
-    photosTrip: PropTypes.string,
+    photosTrip: PropTypes.array,
+    coordinates: PropTypes.array.isRequired,
+    date: PropTypes.string,
   }),
 };
 

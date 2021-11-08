@@ -53,6 +53,7 @@ export default [
       'karting-electrique-nantes-trip-photo2.jpg',
       'karting-electrique-nantes-trip-photo3.jpg',
     ],
+    coordinates: [-1.6528131378126631, 47.234584126746704],
   },
   {
     id: 5,
@@ -103,6 +104,7 @@ export default [
       'jovikart-trip-photo2.jpg',
       'jovikart-trip-photo3.jpg',
     ],
+    coordinates: [-1.4981273569561058, 47.12347488072278],
   },
   {
     id: 4,
@@ -144,9 +146,9 @@ export default [
     classMinJunior: '7',
     classMaxJunior: '10',
     materialJunior: '160cc 4,5cv',
-    tarifJuniorMember: 10,
-    tarifJuniorExt: 10,
-    tarifJunior: 17,
+    tarifJuniorMember: '10',
+    tarifJuniorExt: '10',
+    tarifJunior: '17',
     sessionJunior: [
       'Accueil & briefing',
       '3 sessions de 10 min',
@@ -156,6 +158,7 @@ export default [
       'solokart-trip-photo2.jpg',
       'solokart-trip-photo3.jpg',
     ],
+    coordinates: [-1.8396892722931633, 47.52436661277438],
   },
   {
     id: 3,
@@ -207,6 +210,7 @@ export default [
       'lmc-trip-photo2.jpg',
       'lmc-trip-photo3.jpg',
     ],
+    coordinates: [-1.5915482569587507, 46.947423739893495],
   },
   {
     id: 2,
@@ -257,5 +261,6 @@ export default [
       'mrk-trip-photo2.jpg',
       'mrk-trip-photo3.jpg',
     ],
+    coordinates: [-1.8495620857959771, 46.8515754131149],
   },
 ];

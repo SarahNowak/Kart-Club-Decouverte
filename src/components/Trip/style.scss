@@ -32,28 +32,6 @@
       margin: 60px 0 30px 0;
     } 
   }  
-  
-  &-map {
-    margin-left: 2.5rem;
-    margin-bottom: 2rem;
-    max-width: 480px;
-
-    @media (max-width: 1023px) {    
-      align-self: center;
-      margin-left: 0;
-      margin-bottom: 2.5rem;
-      max-width: 100%;
-    }
-
-    @media (max-width: 425px) {    
-      width: 100%;
-      margin-left: inherit;
-    } 
-
-    &-image{
-      border-radius: .5rem; 
-    }
-  }
 
   &-class-adult {
     color: #0F9F3F;
@@ -104,6 +82,13 @@
       text-align: center;
     }
 
+    &-date {
+      margin: 2rem 0 1rem 0;
+      font-size: 1.5em;
+      font-weight: 900;
+      text-align: center;
+    }
+
     @media (max-width: 425px) {    
       padding: 1rem;
     } 
@@ -140,7 +125,6 @@
     
     @media (max-width: 1023px) {    
       margin: 1rem;
-      width: 90%;
     }
   }
   
