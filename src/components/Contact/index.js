@@ -69,6 +69,8 @@ const Contact = ({
         <ReCAPTCHA
           sitekey="6LeGUgAdAAAAADec8UUJZ5EjskTj38pGNv_zX8TI"
           onChange={handleOnChange}
+          theme="dark"
+          className="recaptcha"
         />
         <div className="form-button">
           {showCaptcha
