@@ -6,7 +6,7 @@ import './style.scss';
 
 const Search = ({ changeField, searchForm }) => (
   <div className="search">
-    <Field inputFor="searchForm" onChange={changeField} placeholder="Recherche ..." value={searchForm} />
+    <Field inputFor="searchForm" onChange={changeField} placeholder="Rechercher un circuit ..." value={searchForm} />
   </div>
 );
 

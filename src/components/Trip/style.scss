@@ -12,7 +12,14 @@
 .trip {
   background-image: url('src/assets/images/background-black.jpg');
   background-size: cover;
-  // background: linear-gradient(#BBD2C5, #536976, #292E49);
+  display: flex;
+  flex-direction: column;
+
+  &-containerMap {
+    @media(min-width: 426px) and (max-width: 1024px){
+      align-self: center;
+    }
+  }
 
   &-button {
     margin: 150px 0 0 40px;
@@ -181,4 +188,3 @@
     }
   }
 }
-

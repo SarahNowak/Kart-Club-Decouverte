@@ -18,7 +18,7 @@ const Trip = ({ trip }) => (
     <div className="trip-container">
       <div className="trip-container-image">
         {trip.photosTrip.map((info) => (
-          <img className="trip-image" src={`/images/${info}`} alt="Circuit" />
+          <img key={info} className="trip-image" src={`/images/${info}`} alt="Circuit" />
         ))}
       </div>
       <section className="section-container">
@@ -29,7 +29,7 @@ const Trip = ({ trip }) => (
             </h2>
             <div className="trip-summary-description">
               {trip.description.map((info) => (
-                <ul>
+                <ul key={info}>
                   <li>{info} </li>
                 </ul>
               ))}
@@ -47,7 +47,7 @@ const Trip = ({ trip }) => (
             <div className="trip-formul-adult">
               <span className="trip-class-adult">ADULTES : à partir de {trip.classAdult} ans : Matériel {trip.materialAdult}</span>
               {trip.sessionAdult.map((info) => (
-                <ul>
+                <ul key={info}>
                   <li>{info}</li>
                 </ul>
               ))}
@@ -58,7 +58,7 @@ const Trip = ({ trip }) => (
                 <div className="trip-formul-young">
                   <span className="trip-class-young">JEUNES : à partir de {trip.classYoung} ans : Matériel {trip.materialYoung} </span>
                   {trip.sessionYoung.map((info) => (
-                    <ul>
+                    <ul key={info}>
                       <li>{info}</li>
                     </ul>
                   ))}
@@ -71,7 +71,7 @@ const Trip = ({ trip }) => (
                 <div className="trip-formul-junior">
                   <span className="trip-class-junior">JUNIORS : de {trip.classMinJunior} à {trip.classMaxJunior} ans :  Matériel {trip.materialJunior} </span>
                   {trip.sessionJunior.map((info) => (
-                    <ul>
+                    <ul key={info}>
                       <li>{info}</li>
                     </ul>
                   ))}

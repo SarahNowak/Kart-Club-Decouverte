@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Button from '@material-ui/core/Button';
@@ -31,10 +31,15 @@ const Contact = ({
       .then(() => {
         alert('Votre message a été envoyé avec succès');
       }, () => {
-        alert("Erreur lors de l'envoi de votre message");
+        alert("Erreur lors de l'envoi de votre message, merci de nous contacter par téléphone ou mail");
       });
 
     resetForm();
+  };
+
+  const [showCaptcha, setShowCaptcha] = useState(false);
+  const handleOnChange = () => {
+    setShowCaptcha(true);
   };
 
   return (
@@ -61,13 +66,17 @@ const Contact = ({
           </div>
           <FieldArea inputFor="message" placeholder="Votre message" onChange={changeField} value={message} />
         </section>
-        <div className="form-button">
-          <Button type="submit" variant="contained" value="send" color="primary">Envoyer</Button>
-        </div>
-        {/* <ReCAPTCHA
+        <ReCAPTCHA
           sitekey="6LeGUgAdAAAAADec8UUJZ5EjskTj38pGNv_zX8TI"
-        /> */}
+          onChange={handleOnChange}
+        />
+        <div className="form-button">
+          {showCaptcha
+            ? <Button type="submit" variant="contained" value="send" color="primary">Envoyer</Button>
+            : ''}
+        </div>
       </form>
+
     </main>
   );
 };

@@ -5,7 +5,6 @@ const initialState = {
   lastName: '',
   firstName: '',
   message: '',
-  captcha: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
