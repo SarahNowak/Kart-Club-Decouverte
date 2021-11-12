@@ -10,7 +10,7 @@ h2 {
   height: 430px;
   border-radius: 1rem;
   transition: transform 0.2s;
-  margin: 1rem 1rem 3rem 1rem;
+  margin: 1rem 1rem 2rem 1rem;
 
   &:hover {
     transform: scale(1.1);
@@ -20,7 +20,7 @@ h2 {
   &-photo {
     border-radius: 10px 10px 0 0;
     margin-bottom: -.5rem;
-    height: 220px;
+    height: 210px;
     width: 100%;
   }
 
@@ -36,7 +36,7 @@ h2 {
     text-align: center;
     border-radius: 0 0 1rem 1rem;
     overflow: auto;
-    height: 220px;
+    height: 230px;
     display: flex;
     flex-direction: column;
   }

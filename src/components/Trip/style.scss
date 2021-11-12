@@ -6,7 +6,10 @@
   @media (max-width: 1023px) {    
     flex-direction: column;
   } 
+}
 
+.cardTripLink {
+  display: flex;
 }
 
 .trip {
@@ -177,6 +180,7 @@
       margin-bottom: 4rem;
       background-color: vars.$colorGrey;
       border-radius: .5rem;
+      margin-right: 2.5rem;
 
       @media (max-width: 1023px) {    
         margin-top: 1rem;

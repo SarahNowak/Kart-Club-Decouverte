@@ -9,7 +9,7 @@ import Map from 'src/components/Map';
 const Trip = ({ trip }) => (
   <main className="trip">
     <button className="trip-button" type="button">
-      <Link to="/les-sorties" className="cardTrip-link">
+      <Link to="/les-sorties" className="cardTripLink">
         ↩
         Retour aux sorties
       </Link>

@@ -56,6 +56,8 @@ const Contact = ({
         <br />
         Nous étudierons toutes les idées
         et nous vous ferons un retour dès que possible.
+        <br />
+        contact@kart-club-decouverte.fr
       </p>
       <form className="contact-form" onSubmit={sendEmail}>
         <section className="section-form">
