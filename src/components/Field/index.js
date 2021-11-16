@@ -18,12 +18,6 @@ const Field = ({
 
   const inputId = `field-${inputFor}`;
 
-  // Avoid field of type number to receive negative values
-  let minMax = '';
-  if (type === 'number') {
-    minMax = '1';
-  }
-
   return (
     <div className="field">
       <input
@@ -32,7 +26,6 @@ const Field = ({
         className="field-input"
         id={inputId}
         placeholder={placeholder}
-        min={minMax}
         type={type}
         required
       />

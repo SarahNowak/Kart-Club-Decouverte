@@ -11,23 +11,23 @@ import FieldArea from '../FieldArea';
 
 const Contact = ({
   changeField,
-  lastName,
-  firstName,
-  email,
-  message,
+  lastNameContact,
+  firstNameContact,
+  emailContact,
+  messageContact,
   resetForm,
 }) => {
   const sendEmail = (event) => {
     event.preventDefault();
 
-    const messageContact = {
-      lastName,
-      firstName,
-      email,
-      message,
+    const messageContactUs = {
+      lastNameContact,
+      firstNameContact,
+      emailContact,
+      messageContact,
     };
 
-    emailjs.send('service_1sxcupk', 'template_yzgi7xv', messageContact, 'user_QRJ4xXtrWUF8n8MLFTVtg')
+    emailjs.send('service_1sxcupk', 'template_yzgi7xv', messageContactUs, 'user_QRJ4xXtrWUF8n8MLFTVtg')
       .then(() => {
         alert('Votre message a été envoyé avec succès');
       }, () => {
@@ -62,11 +62,11 @@ const Contact = ({
       <form className="contact-form" onSubmit={sendEmail}>
         <section className="section-form">
           <div className="form-input">
-            <Field inputFor="lastName" placeholder="Nom" type="text" onChange={changeField} value={lastName} />
-            <Field inputFor="firstName" placeholder="Prénom" type="text" onChange={changeField} value={firstName} />
-            <Field inputFor="email" placeholder="Adresse mail" type="email" onChange={changeField} value={email} />
+            <Field inputFor="lastNameContact" placeholder="Nom" type="text" onChange={changeField} value={lastNameContact} />
+            <Field inputFor="firstNameContact" placeholder="Prénom" type="text" onChange={changeField} value={firstNameContact} />
+            <Field inputFor="emailContact" placeholder="Adresse mail" type="email" onChange={changeField} value={emailContact} />
           </div>
-          <FieldArea inputFor="message" placeholder="Votre message" onChange={changeField} value={message} />
+          <FieldArea inputFor="messageContact" placeholder="Votre message" onChange={changeField} value={messageContact} />
         </section>
         <ReCAPTCHA
           sitekey="6LeGUgAdAAAAADec8UUJZ5EjskTj38pGNv_zX8TI"
@@ -80,7 +80,6 @@ const Contact = ({
             : ''}
         </div>
       </form>
-
     </main>
   );
 };
@@ -88,10 +87,10 @@ const Contact = ({
 Contact.propTypes = {
   resetForm: PropTypes.func.isRequired,
   changeField: PropTypes.func.isRequired,
-  lastName: PropTypes.string.isRequired,
-  firstName: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  message: PropTypes.string.isRequired,
+  lastNameContact: PropTypes.string.isRequired,
+  firstNameContact: PropTypes.string.isRequired,
+  emailContact: PropTypes.string.isRequired,
+  messageContact: PropTypes.string.isRequired,
 };
 
 export default Contact;

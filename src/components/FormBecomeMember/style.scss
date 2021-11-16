@@ -13,7 +13,7 @@
   &-title {
     text-align: center;
     font-size: 2em;
-    padding-top: 2rem;
+    padding: 2rem 0;
   }
   
   &-form {
@@ -73,4 +73,8 @@
 
 .MuiButton-label {
 font-family: 'Zen Kurenaido', sans-serif;
+}
+
+.photoForm-input {
+  padding-top: 0.7rem;
 }

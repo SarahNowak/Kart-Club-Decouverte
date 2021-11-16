@@ -3,10 +3,10 @@ import Contact from 'src/components/Contact';
 import { changeField, resetForm } from 'src/actions/contact';
 
 const mapStateToProps = (state) => ({
-  lastName: state.contact.lastName,
-  firstName: state.contact.firstName,
-  email: state.contact.email,
-  message: state.contact.message,
+  lastNameContact: state.contact.lastNameContact,
+  firstNameContact: state.contact.firstNameContact,
+  emailContact: state.contact.emailContact,
+  messageContact: state.contact.messageContact,
 });
 
 const mapDispatchToProps = (dispatch) => ({

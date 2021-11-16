@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './style.scss';
-import FormBecomeMember from '../FormBecomeMember';
+import FormBecomeMember from 'src/containers/FormBecomeMember';
 
 const BecomeMember = () => (
   <main className="becomeMember">

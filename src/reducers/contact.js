@@ -1,10 +1,10 @@
 import { CHANGE_FIELD, RESET_FORM } from '../actions/contact';
 
 const initialState = {
-  email: '',
-  lastName: '',
-  firstName: '',
-  message: '',
+  emailContact: '',
+  lastNameContact: '',
+  firstNameContact: '',
+  messageContact: '',
 };
 
 const reducer = (state = initialState, action = {}) => {

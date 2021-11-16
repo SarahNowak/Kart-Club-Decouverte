@@ -18,7 +18,7 @@ import Error from '../Error';
 import AssociationPage from '../AssociationPage';
 import BecomeMember from '../BecomeMember';
 import OurPartners from '../OurPartners';
-// import TripInProgressPage from '../TripInProgressPage';
+import Subscribe from '../Subscribe';
 // import Loading from './Loading';
 
 // == Composant
@@ -57,14 +57,14 @@ const App = () => {
         <Route path="/sortie/:id" exact>
           <Trip />
         </Route>
-        {/* <Route path="/sortie-du-mois" exact>
-          <TripInProgressPage />
-        </Route> */}
         <Route path="/nous-contacter" exact>
           <Contact />
         </Route>
         <Route path="/qui-sommes-nous" exact>
           <WhoWeAre />
+        </Route>
+        <Route path="/inscription-sortie" exact>
+          <Subscribe />
         </Route>
         <Route>
           <Error />

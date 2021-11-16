@@ -12,7 +12,7 @@ const Presentation = () => (
           <span className="summary-title-white">Club </span>
           <span className="summary-title-red">Découverte </span>
         </h1>
-        <p className="summary-text">KCD est une association à but non lucratif créée afin de faire découvrir et rendre accessible au plus grand nombre la pratique du karting.</p>
+        <p className="summary-text">Association à but non lucratif créée afin de faire découvrir et rendre accessible au plus grand nombre la pratique du karting.</p>
       </div>
     </div>
   </section>
