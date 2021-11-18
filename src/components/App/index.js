@@ -19,7 +19,6 @@ import AssociationPage from '../AssociationPage';
 import BecomeMember from '../BecomeMember';
 import OurPartners from '../OurPartners';
 import Subscribe from '../Subscribe';
-// import Loading from './Loading';
 
 // == Composant
 const App = () => {
@@ -32,9 +31,6 @@ const App = () => {
     window.scroll(0, 0);
   }, [location]);
 
-  // if (loading) {
-  //   return <Loading />;
-  // }
   return (
     <div className="app">
       <AppHeader />
@@ -76,11 +72,11 @@ const App = () => {
 };
 
 App.propTypes = {
-  // loading: PropTypes.bool,
+
 };
 
 App.defaultProps = {
-  loading: false,
+
 };
 
 // == Export

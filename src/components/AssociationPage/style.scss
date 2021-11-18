@@ -2,8 +2,7 @@
 
 .associationPage {
   padding-top: 180px;
-  // background: linear-gradient(#BBD2C5, #536976, #292E49);
-  background-image: url('src/assets/images/background-black.jpg');
+  background-image: url('/public/images/background.jpg');
   background-size: cover;
   @media (max-width:425px){
     padding-top: 100px;

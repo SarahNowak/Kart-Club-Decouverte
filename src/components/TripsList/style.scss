@@ -1,7 +1,7 @@
 @use 'src/styles/vars';
 
 .tripsList {
-  background-image: url('src/assets/images/background-black.jpg');
+  background-image: url('/public/images/background.jpg');
   background-size: cover;
   min-height: 95vh;
   

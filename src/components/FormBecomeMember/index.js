@@ -99,6 +99,15 @@ const FormBecomeMember = ({
             : ''}
         </div>
       </form>
+      <div className="formBecomeMember-privateDatas">
+        <p>
+          En remplissant ce formulaire, vous certifiez sur l'honneur avoir pris connaissance et
+          acceptez sans réserve le règlement intérieur de l'association
+          Toutes les informations de ce formulaire sont obligatoires afin de valider votre adhésion.
+          Vos données resterons strictement confidentielles et à l’usage unique de
+          l’association KCD.
+        </p>
+      </div>
     </section>
   );
 };

@@ -1,7 +1,7 @@
 @use 'src/styles/vars';
 
 .subscribe {
-  background-image: url('src/assets/images/background-black.jpg');
+  background-image: url('/public/images/background.jpg');
   padding-top: 180px;
   background-size: cover;
   display: flex;

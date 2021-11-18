@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import PropTypes from 'prop-types';
 
 import './style.scss';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Map from 'src/components/Map';
 import { createTripOfMonth } from 'src/selectors';
 import trips from 'src/trips';
 
 const Trip = ({ trip }) => {
   const tripOfMonth = createTripOfMonth(trips);
+  const location = useLocation();
+
+  useEffect(() => {
+    document.querySelector('meta[name="url"]').setAttribute('content', document.location);
+    document.querySelector('meta[name="image"]').setAttribute('content', `https://kart-club-decouverte.surge.sh/images/${trip.imgCard}`);
+    document.querySelector('meta[name="description"]').setAttribute('content', `${trip.circuit}, ${trip.title}`);
+  }, [location]);
 
   return (
     <main className="trip">
@@ -90,13 +97,14 @@ const Trip = ({ trip }) => {
               </p>
             </div>
           </div>
-          <div>
+          <div className="trip-container-right">
             <div className="trip-containerMap">
               <Map className="mapContainer" coordinates={trip.coordinates} city={trip.adress} imgMap={trip.imgCard} />
             </div>
             {tripOfMonth[0].id === trip.id
-              ? <Link to="/inscription-sortie"><button type="button" className="trip-subscribeBbutton">M'inscrire à la sortie</button></Link>
+              ? <Link to="/inscription-sortie"><button type="button" className="trip-subscribeButton">M'inscrire à la sortie</button></Link>
               : ''}
+            <iframe className="fb-share-button" title="fb" src={`https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fkart-club-decouverte.surge.sh%2Fsortie/${trip.id}&layout=button&size=large&width=93&height=28&appId`} width="93" height="28" scrolling="no" frameBorder="0" allowFullScreen allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" />
           </div>
         </section>
       </div>

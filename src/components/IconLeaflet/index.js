@@ -1,5 +1,4 @@
 import L from 'leaflet';
-import HomeIcon from 'src/assets/images/home.svg';
 import LeafIcon from 'src/assets/images/icon.png';
 
 const iconHome = new L.Icon({

@@ -13,7 +13,7 @@
 }
 
 .trip {
-  background-image: url('src/assets/images/background-black.jpg');
+  background-image: url('/public/images/background.jpg');
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -24,7 +24,7 @@
     }
   }
 
-  &-subscribeBbutton {
+  &-subscribeButton {
     font-family: 'Zen Kurenaido', sans-serif;
     border: inherit;
     font-weight: 800;
@@ -38,7 +38,7 @@
     border-radius: 10px;
     display: block;
     background-image: linear-gradient(to right, #43C6AC 0%, #191654  51%, #43C6AC  100%);
-    margin: 4rem auto;
+    margin: .5rem auto 1rem;
 
     @media (max-width: 425px) {   
       display: absolute;
@@ -190,6 +190,11 @@
     justify-content: space-around;
     line-height: 1.5em;
       
+    &-right {
+      display: flex;
+      flex-direction: column;
+    }
+
     @media (max-width: 1023px) {    
       &-image {
         display: flex;
@@ -218,3 +223,10 @@
     }
   }
 }
+
+.fb-share-button {
+  align-self: center;
+  margin: 1rem 0 2rem;
+}
+
+
