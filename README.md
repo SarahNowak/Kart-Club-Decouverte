@@ -1,4 +1,4 @@
-# Kart-Club-Decouverte
+# Kart Club Decouverte
 
 Voir le site [![This is an image](https://img.shields.io/badge/KartClubDecouverte-07C160?style=for-the-badge&logo=KartClubDecouverte&logoColor=white)](https://kart-club-decouverte.surge.sh/)
 
