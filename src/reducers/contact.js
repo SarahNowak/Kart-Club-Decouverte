@@ -1,4 +1,4 @@
-import { CHANGE_FIELD, RESET_FORM } from '../actions/contact';
+import { CHANGE_FIELD, RESET_FORM, VERIFIED_RECAPTCHA } from '../actions/contact';
 
 const initialState = {
   emailContact: '',
@@ -17,6 +17,11 @@ const reducer = (state = initialState, action = {}) => {
     case RESET_FORM:
       return {
         ...initialState,
+      };
+    case VERIFIED_RECAPTCHA:
+      return {
+        ...state,
+        [action.key]: action.value,
       };
     default:
       return state;

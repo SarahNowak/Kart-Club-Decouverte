@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Contact from 'src/components/Contact';
-import { changeField, resetForm } from 'src/actions/contact';
+import { changeField, resetForm, verifiedRecaptcha } from 'src/actions/contact';
 
 const mapStateToProps = (state) => ({
   lastNameContact: state.contact.lastNameContact,
@@ -15,6 +15,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   resetForm: () => {
     dispatch(resetForm());
+  },
+  verifiedRecaptcha: (value, name) => {
+    dispatch(verifiedRecaptcha(name, value));
   },
 });
 

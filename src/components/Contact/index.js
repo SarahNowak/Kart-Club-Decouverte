@@ -16,6 +16,7 @@ const Contact = ({
   emailContact,
   messageContact,
   resetForm,
+  verifiedRecaptcha,
 }) => {
   const sendEmail = (event) => {
     event.preventDefault();
@@ -38,7 +39,8 @@ const Contact = ({
   };
 
   const [showCaptcha, setShowCaptcha] = useState(false);
-  const handleOnChange = () => {
+  const handleOnChange = (value) => {
+    verifiedRecaptcha(value);
     setShowCaptcha(true);
   };
 
@@ -69,7 +71,8 @@ const Contact = ({
           <FieldArea inputFor="messageContact" placeholder="Votre message" onChange={changeField} value={messageContact} />
         </section>
         <ReCAPTCHA
-          sitekey="6LeGUgAdAAAAADec8UUJZ5EjskTj38pGNv_zX8TI"
+          // sitekey="6LeGUgAdAAAAADec8UUJZ5EjskTj38pGNv_zX8TI"
+          sitekey="6LfRywIeAAAAALY2Pyceg_H9TbTwKo3EiMf-AuaZ"
           onChange={handleOnChange}
           theme="dark"
           className="recaptcha"
@@ -91,6 +94,7 @@ Contact.propTypes = {
   firstNameContact: PropTypes.string.isRequired,
   emailContact: PropTypes.string.isRequired,
   messageContact: PropTypes.string.isRequired,
+  verifiedRecaptcha: PropTypes.func.isRequired,
 };
 
 export default Contact;
