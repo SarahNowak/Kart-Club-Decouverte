@@ -12,6 +12,8 @@ import WhoWeAre from 'src/components/WhoWeAre';
 import Contact from 'src/containers/Contact';
 import Trip from 'src/containers/Trip';
 import TripsList from 'src/containers/TripsList';
+import Login from 'src/containers/Login';
+import Registration from 'src/containers/Registration';
 import Home from '../Home';
 import Footer from '../Footer';
 import Error from '../Error';
@@ -61,6 +63,12 @@ const App = () => {
         </Route>
         <Route path="/inscription-sortie" exact>
           <Subscribe />
+        </Route>
+        <Route path="/connexion" exact>
+          <Login />
+        </Route>
+        <Route path="/creer-mon-compte" exact>
+          <Registration />
         </Route>
         <Route>
           <Error />

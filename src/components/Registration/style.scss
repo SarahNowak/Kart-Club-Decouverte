@@ -1,0 +1,47 @@
+@use 'src/styles/vars';
+
+.registration {
+  background-image: url('/public/images/background.jpg');
+  background-size: cover;
+  padding-top: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+
+  @media (max-width:425px){
+    padding-top: 100px;
+  }
+
+  &-text {
+    text-align: center;
+    color: white;
+    font-size: 3em;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 0.3px;   
+    margin-bottom: 2rem;
+
+    @media (max-width: 425px) {   
+      font-size: 2rem;
+    } 
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -5rem;
+
+    &-field {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &-SubmitBtn {
+    margin-top: 0.5rem;
+  }
+
+}

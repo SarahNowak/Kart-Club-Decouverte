@@ -15,10 +15,10 @@ const Footer = () => (
         <EmailIcon className="footer-link-icon" />
         Nous contacter
       </NavLink>
-      <NavLink exact to="/mentions-legales" className="footer-link">
+      {/* <NavLink exact to="/mentions-legales" className="footer-link">
         <AssignmentIcon className="footer-link-icon" />
         Mentions légales
-      </NavLink>
+      </NavLink> */}
       <NavLink exact to="/qui-sommes-nous" className="footer-link">
         <NaturePeopleIcon className="footer-link-icon" />
         Qui-sommes nous ?
