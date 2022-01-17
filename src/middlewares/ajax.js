@@ -6,7 +6,7 @@ require('isomorphic-fetch');
 const ajax = (store) => (next) => async (action) => {
   switch (action.type) {
     case VERIFIED_RECAPTCHA: {
-      const { RECAPTCHA_SERVER_KEY } = process.env;
+      const { RECAPTCHA_SERVER_KEY } = '6LeGUgAdAAAAABs75jZOtbWVDvitaYnxUvD5aYxH';
       const humanKey = action.value;
 
       // Validate Human

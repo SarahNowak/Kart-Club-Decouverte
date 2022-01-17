@@ -18,7 +18,7 @@ const Login = ({
   };
 
   return (
-    <section className="login">
+    <main className="login">
       <form className="login-form">
         <div className="login-text">Veuillez vous connecter</div>
         <div className="login-formField">
@@ -33,7 +33,7 @@ const Login = ({
         Envie de nous rejoindre ?
         <Link to="/creer-mon-compte" className="login-createAccount"> Créer un compte </Link>
       </div>
-    </section>
+    </main>
   );
 };
 

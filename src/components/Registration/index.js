@@ -17,22 +17,20 @@ const Registration = ({
   };
 
   return (
-    <main>
-      <section className="registration">
-        <form className="registration-form">
-          <div className="registration-text">Créer mon compte</div>
-          <div className="registration-form-field">
-            <Field inputFor="pseudo" onChange={changeField} placeholder="Pseudo" value={pseudo} type="text" />
-            <Field inputFor="email" onChange={changeField} placeholder="Adresse Email" value={email} type="email" />
-            <Field inputFor="password" onChange={changeField} placeholder="Mot de passe" value={password} type="password" />
-          </div>
-          <div>
-            <Button variant="contained" color="primary" type="submit" className="registration-submitBtn" onClick={handleSubmit}>
-              Envoyer
-            </Button>
-          </div>
-        </form>
-      </section>
+    <main className="registration">
+      <form className="registration-form">
+        <div className="registration-text">Créer mon compte</div>
+        <div className="registration-form-field">
+          <Field inputFor="pseudo" onChange={changeField} placeholder="Pseudo" value={pseudo} type="text" />
+          <Field inputFor="email" onChange={changeField} placeholder="Adresse Email" value={email} type="email" />
+          <Field inputFor="password" onChange={changeField} placeholder="Mot de passe" value={password} type="password" />
+        </div>
+        <div className="registration-submitBtn">
+          <Button variant="contained" color="primary" type="submit" onClick={handleSubmit}>
+            Envoyer
+          </Button>
+        </div>
+      </form>
     </main>
   );
 };
