@@ -1,0 +1,17 @@
+@use 'src/styles/vars';
+
+.errorMessagesDisplayer{
+  min-height: 3rem;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &-message{
+    color: red;
+    animation-duration: 5s; 
+    animation-name: softMessage;
+  
+  }
+}

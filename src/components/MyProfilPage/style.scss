@@ -1,0 +1,16 @@
+@use 'src/styles/vars';
+
+.myProfilPage {
+  // background: linear-gradient(#BBD2C5, #536976, #292E49);
+  background-image: url('/public/images/background.jpg');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+
+  &-salutation {
+    color: white;
+  }
+}

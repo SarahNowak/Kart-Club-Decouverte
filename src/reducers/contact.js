@@ -1,6 +1,6 @@
 import { CHANGE_FIELD, RESET_FORM, VERIFIED_RECAPTCHA } from '../actions/contact';
 
-const initialState = {
+export const initialState = {
   emailContact: '',
   lastNameContact: '',
   firstNameContact: '',

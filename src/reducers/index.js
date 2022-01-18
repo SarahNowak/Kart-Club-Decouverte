@@ -7,8 +7,9 @@ import searchTripsReducer from './searchTrips';
 import formBecomeMemberReducer from './formBecomeMember';
 import registrationReducer from './registration';
 import loginReducer from './login';
+import userReducer from './user';
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   settings: settingsReducer,
   contact: contactReducer,
   trips: tripsReducer,
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   formBecomeMember: formBecomeMemberReducer,
   registration: registrationReducer,
   login: loginReducer,
+  user: userReducer,
 });
 
 export default rootReducer;

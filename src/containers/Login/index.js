@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Login from 'src/components/Login';
-import { changeFieldLogin } from 'src/actions/login';
+import { changeFieldLogin, connectUser } from 'src/actions/login';
 
 const mapStateToProps = (state) => ({
   email: state.login.email,
@@ -10,6 +10,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   changeField: (value, name) => {
     dispatch(changeFieldLogin(name, value));
+  },
+  logUser: (email, password) => {
+    dispatch(connectUser(email, password));
   },
 });
 

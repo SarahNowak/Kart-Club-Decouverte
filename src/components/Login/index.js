@@ -5,6 +5,7 @@ import './style.scss';
 import { Button } from '@material-ui/core';
 import Field from 'src/components/Field';
 import { Link } from 'react-router-dom';
+import ErrMessagesDisplayer from '../../containers/ErrMessagesDisplayer';
 
 const Login = ({
   email,
@@ -24,6 +25,7 @@ const Login = ({
         <div className="login-formField">
           <Field inputFor="email" onChange={changeField} placeholder="Adresse Email" value={email} type="email" />
           <Field inputFor="password" onChange={changeField} placeholder="Mot de passe" value={password} type="password" />
+          <ErrMessagesDisplayer />
         </div>
         <div type="submit" className="login-formSubmitBtn" onClick={handleSubmit}>
           <Button variant="contained" color="primary">Se connecter</Button>

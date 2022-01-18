@@ -12,7 +12,7 @@
   min-height: 90vh;
 
   @media (max-width:425px){
-    padding-top: 100px;
+    padding-top: 50px;
   }
 
   &-form {
@@ -49,6 +49,7 @@
   &-joinUs {
     font-size: 1.5em;
     color: white;
+    text-align: center;
   }
 
   &-createAccount {

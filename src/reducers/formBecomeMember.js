@@ -1,6 +1,6 @@
-import { CHANGE_FIELD, RESET_FORM, CHANGE_PHOTO_MEMBER } from '../actions/formBecomeMember.js';
+import { CHANGE_FIELD, RESET_FORM, CHANGE_PHOTO_MEMBER } from '../actions/formBecomeMember';
 
-const initialState = {
+export const initialState = {
   lastName: '',
   firstName: '',
   adress: '',

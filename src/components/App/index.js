@@ -3,7 +3,9 @@ import React, { useEffect } from 'react';
 
 // == Import
 import './style.scss';
-import { Route, Switch, useLocation } from 'react-router-dom';
+import {
+  Redirect, Route, Switch, useLocation,
+} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // == Import components
@@ -14,6 +16,7 @@ import Trip from 'src/containers/Trip';
 import TripsList from 'src/containers/TripsList';
 import Login from 'src/containers/Login';
 import Registration from 'src/containers/Registration';
+import MyProfilPage from 'src/containers/MyProfilPage';
 import Home from '../Home';
 import Footer from '../Footer';
 import Error from '../Error';
@@ -23,7 +26,7 @@ import OurPartners from '../OurPartners';
 import Subscribe from '../Subscribe';
 
 // == Composant
-const App = () => {
+const App = ({ isLogged }) => {
   // je rend mon composant dépendant de l'adresse actuelle
   // il sera rerendu chaque fois que l'adresse change
   const location = useLocation();
@@ -65,10 +68,13 @@ const App = () => {
           <Subscribe />
         </Route>
         <Route path="/connexion" exact>
-          <Login />
+          {!isLogged ? <Login /> : <Redirect to="mon-profil" />}
+        </Route>
+        <Route path="/mon-profil" exact>
+          <MyProfilPage />
         </Route>
         <Route path="/creer-mon-compte" exact>
-          <Registration />
+          {!isLogged ? <Registration /> : <Redirect to="mon-profil" />}
         </Route>
         <Route>
           <Error />
@@ -80,7 +86,7 @@ const App = () => {
 };
 
 App.propTypes = {
-
+  isLogged: PropTypes.bool.isRequired,
 };
 
 App.defaultProps = {

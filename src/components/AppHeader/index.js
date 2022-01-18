@@ -6,8 +6,8 @@ import BurgerDropdownMenu from 'src/containers/BurgerDropdownMenu';
 import BurgerBtn from 'src/containers/BurgerBtn';
 import logo from 'src/assets/images/logo.png';
 import { Link } from 'react-router-dom';
+import LoginButton from 'src/containers/LoginButton';
 import Nav from '../Nav';
-import LoginButton from '../LoginButton';
 
 const AppHeader = ({ burgerIsOpen }) => (
   <header className="header">
