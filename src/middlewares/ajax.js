@@ -15,7 +15,9 @@ require('isomorphic-fetch');
 
 const ajax = (store) => (next) => async (action) => {
   const localUrl = 'http://localhost:8000';
-  const rootUrl = 'http://ec2-18-117-83-12.us-east-2.compute.amazonaws.com/kart_club_decouverte_back/public/';
+  const serverUrl = 'http://ec2-18-117-83-12.us-east-2.compute.amazonaws.com/kart_club_decouverte_back/public';
+
+  const rootUrl = serverUrl;
 
   switch (action.type) {
     case VERIFIED_RECAPTCHA: {
@@ -67,7 +69,7 @@ const ajax = (store) => (next) => async (action) => {
 
       try {
         store.dispatch(toggleLoadingSubmitStatus());
-        const response = await fetch(localUrl + Endpoint, fetchOptions);
+        const response = await fetch(rootUrl + Endpoint, fetchOptions);
 
         if (response.ok) {
           const data = await response.json();
@@ -115,8 +117,8 @@ const ajax = (store) => (next) => async (action) => {
       };
 
       try {
-        const response = await fetch(localUrl + Endpoint, fetchOptions);
-        // console.log(`Response from api call on ${Endpoint} = `, response);
+        const response = await fetch(rootUrl + Endpoint, fetchOptions);
+        console.log(`Response from api call on ${Endpoint} = `, response);
 
         if (response.ok) {
           const data = await response.json();
@@ -156,8 +158,8 @@ const ajax = (store) => (next) => async (action) => {
         headers: myHeaders,
       };
       try {
-        const response = await fetch(localUrl + Endpoint, fetchOptions);
-        // console.log(`Response from api call on ${Endpoint} = `, response);
+        const response = await fetch(rootUrl + Endpoint, fetchOptions);
+        console.log(`Response from api call on ${Endpoint} = `, response);
 
         if (response.ok) {
           const data = await response.json();
