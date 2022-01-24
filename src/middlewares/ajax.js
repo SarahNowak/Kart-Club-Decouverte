@@ -17,11 +17,11 @@ const ajax = (store) => (next) => async (action) => {
   const localUrl = 'http://localhost:8000';
   const serverUrl = 'http://ec2-18-117-83-12.us-east-2.compute.amazonaws.com/kart_club_decouverte_back/public';
 
-  const rootUrl = serverUrl;
+  const rootUrl = localUrl;
 
   switch (action.type) {
     case VERIFIED_RECAPTCHA: {
-      const { RECAPTCHA_SERVER_KEY } = process.env;
+      const { RECAPTCHA_SERVER_KEY } = import.meta.env;
       const humanKey = action.value;
 
       // Validate Human
@@ -151,20 +151,27 @@ const ajax = (store) => (next) => async (action) => {
       myHeaders.append('Content-Type', 'application/json');
       myHeaders.append('Accept', 'application/json');
       myHeaders.append('Authorization', token);
+
       const fetchOptions = {
         method: 'GET',
         mode: 'cors',
         cache: 'no-cache',
         headers: myHeaders,
       };
+
       try {
+        console.log(`ajax middleware -> Init Ajax request on ${Endpoint}`);
         const response = await fetch(rootUrl + Endpoint, fetchOptions);
         console.log(`Response from api call on ${Endpoint} = `, response);
 
         if (response.ok) {
           const data = await response.json();
+          console.log(`User data collected from api call on ${Endpoint} = `, data);
+          // Update the store with user data
           store.dispatch(storeUserData(data));
+          // Update the user loggedIn status
           store.dispatch(login());
+          // return true for promise resolution purpose
           return true;
         }
         console.error(`Erreur du serveur : ${response.status}`);
