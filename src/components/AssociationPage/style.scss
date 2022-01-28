@@ -4,6 +4,7 @@
   padding-top: 180px;
   background-image: url('/public/images/background.jpg');
   background-size: cover;
+  min-height: 100vh;
   @media (max-width:425px){
     padding-top: 100px;
   }

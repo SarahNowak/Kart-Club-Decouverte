@@ -18,11 +18,6 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...initialState,
       };
-    case VERIFIED_RECAPTCHA:
-      return {
-        ...state,
-        [action.key]: action.value,
-      };
     default:
       return state;
   }

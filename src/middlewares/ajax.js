@@ -17,22 +17,22 @@ const ajax = (store) => (next) => async (action) => {
   const localUrl = 'http://localhost:8000';
   const serverUrl = 'http://ec2-18-117-83-12.us-east-2.compute.amazonaws.com/kart_club_decouverte_back/public';
 
-  const rootUrl = localUrl;
+  const rootUrl = serverUrl;
 
   switch (action.type) {
     case VERIFIED_RECAPTCHA: {
-      const { RECAPTCHA_SERVER_KEY } = import.meta.env;
+      const RECAPTCHA_SERVER_KEY = '6LeGUgAdAAAAABs75jZOtbWVDvitaYnxUvD5aYxH';
       const humanKey = action.value;
 
       // Validate Human
       const isHuman = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-        method: 'post',
+        method: 'POST',
         mode: 'no-cors',
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
         },
-        body: `secret=${RECAPTCHA_SERVER_KEY}&response=${humanKey}`,
+        body: `secret=${RECAPTCHA_SERVER_KEY} &response=${humanKey}`,
       })
         .then((res) => res.json())
         .then((json) => json.success)
