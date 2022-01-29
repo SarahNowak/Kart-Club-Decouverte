@@ -38,5 +38,27 @@
   }
 }
 
+.connect {
+
+  display: flex;
+  align-items: center;
+
+  &-salutation {
+    color: white;
+    margin-right: 2rem;
+  }
+
+  &-buttonProfil {
+    color: white;
+    margin-right: .25rem;
+  }
+
+  &-container { 
+    display: flex;
+  }
+
+}
+
+
 
 

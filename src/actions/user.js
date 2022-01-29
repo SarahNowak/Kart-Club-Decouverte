@@ -18,3 +18,8 @@ export const storeUserData = (data) => ({
   type: STORE_USER_DATA,
   data: data,
 });
+
+export const AUTOCONNECT = 'AUTOCONNECT';
+export const autoconnect = () => ({
+  type: AUTOCONNECT,
+});

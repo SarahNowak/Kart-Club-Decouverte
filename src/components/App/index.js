@@ -16,7 +16,7 @@ import Trip from 'src/containers/Trip';
 import TripsList from 'src/containers/TripsList';
 import Login from 'src/containers/Login';
 import Registration from 'src/containers/Registration';
-import MyProfilPage from 'src/containers/MyProfilPage';
+import MyProfilPage from 'src/components/MyProfilPage';
 import Home from '../Home';
 import Footer from '../Footer';
 import Error from '../Error';
@@ -24,9 +24,12 @@ import AssociationPage from '../AssociationPage';
 import BecomeMember from '../BecomeMember';
 import OurPartners from '../OurPartners';
 import Subscribe from '../Subscribe';
+import MyInfoPage from '../MyInfoPage';
+import MyFamilyPage from '../MyFamilyPage';
+import MyTripsPage from '../MyTripsPage';
 
 // == Composant
-const App = ({ isLogged }) => {
+const App = ({ isLogged, tryAutoconnect }) => {
   // je rend mon composant dépendant de l'adresse actuelle
   // il sera rerendu chaque fois que l'adresse change
   const location = useLocation();
@@ -35,6 +38,8 @@ const App = ({ isLogged }) => {
     // je reviens en haut
     window.scroll(0, 0);
   }, [location]);
+
+  useEffect(tryAutoconnect, []);
 
   return (
     <div className="app">
@@ -71,10 +76,19 @@ const App = ({ isLogged }) => {
           {!isLogged ? <Login /> : <Redirect to="mon-profil" />}
         </Route>
         <Route path="/mon-profil" exact>
-          <MyProfilPage />
+          {!isLogged ? <Login /> : <MyProfilPage />}
         </Route>
         <Route path="/creer-mon-compte" exact>
           {!isLogged ? <Registration /> : <Redirect to="mon-profil" />}
+        </Route>
+        <Route path="/mes-informations" exact>
+          {!isLogged ? <Login /> : <MyInfoPage />}
+        </Route>
+        <Route path="/ma-famille" exact>
+          {!isLogged ? <Login /> : <MyFamilyPage />}
+        </Route>
+        <Route path="/mes-sorties" exact>
+          {!isLogged ? <Login /> : <MyTripsPage />}
         </Route>
         <Route>
           <Error />
@@ -87,6 +101,7 @@ const App = ({ isLogged }) => {
 
 App.propTypes = {
   isLogged: PropTypes.bool.isRequired,
+  tryAutoconnect: PropTypes.func.isRequired,
 };
 
 App.defaultProps = {

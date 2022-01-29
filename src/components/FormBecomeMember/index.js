@@ -88,6 +88,7 @@ const FormBecomeMember = ({
           </div>
         </section>
         <ReCAPTCHA
+          // sitekey="6LfRywIeAAAAALY2Pyceg_H9TbTwKo3EiMf-AuaZ"
           sitekey="6LeGUgAdAAAAADec8UUJZ5EjskTj38pGNv_zX8TI"
           onChange={handleOnChange}
           theme="dark"

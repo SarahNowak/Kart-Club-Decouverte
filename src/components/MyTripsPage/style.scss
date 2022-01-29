@@ -1,0 +1,35 @@
+@use 'src/styles/vars';
+.myTripsPage {
+  background-image: url('/public/images/background.jpg');
+  background-size: cover;
+  padding-top: 180px;
+  min-height: 100vh;
+
+  @media (max-width:425px){
+    padding-top: 100px;
+  }
+
+  &-title {
+    color: white;
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+  &-nextTrips {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4rem auto;
+    border: white 1px solid;
+    border-radius: 10px;
+    max-width: 800px;
+    height: 600px;
+  }
+
+  &-previousTrips {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+}

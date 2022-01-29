@@ -47,10 +47,6 @@
   }
 }
 
-.form-button {
-  margin: 2rem;
-}
-
 .photoForm-input {
   font-family: 'Zen Kurenaido', sans-serif;
   display: flex;
@@ -81,4 +77,8 @@ font-family: 'Zen Kurenaido', sans-serif;
 
 .photoForm-input {
   padding-top: 0.7rem;
+}
+
+.recaptcha {
+  width: 100%;
 }

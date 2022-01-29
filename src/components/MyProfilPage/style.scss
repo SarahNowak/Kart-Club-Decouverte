@@ -1,16 +1,28 @@
 @use 'src/styles/vars';
 
 .myProfilPage {
-  // background: linear-gradient(#BBD2C5, #536976, #292E49);
   background-image: url('/public/images/background.jpg');
   background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 90vh;
+  padding-top: 180px;
+  min-height: 100vh;
 
-  &-salutation {
+  @media (max-width:425px){
+    padding-top: 100px;
+  }
+  
+  &-title {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 3em;
+    font-weight: 900;
+    text-transform: uppercase;
     color: white;
+    letter-spacing: 0.3px;   
+
+    @media (max-width: 425px) {   
+      font-size: 2rem;
+    }
   }
 }
+
+

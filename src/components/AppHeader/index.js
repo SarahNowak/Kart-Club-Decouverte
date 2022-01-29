@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './style.scss';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import BurgerDropdownMenu from 'src/containers/BurgerDropdownMenu';
 import BurgerBtn from 'src/containers/BurgerBtn';
 import logo from 'src/assets/images/logo.png';
@@ -9,7 +10,7 @@ import { Link } from 'react-router-dom';
 import LoginButton from 'src/containers/LoginButton';
 import Nav from '../Nav';
 
-const AppHeader = ({ burgerIsOpen }) => (
+const AppHeader = ({ burgerIsOpen, isLogged, userPseudo }) => (
   <header className="header">
     <div className="header-container">
       <BurgerBtn className="burgerBtn" />
@@ -17,7 +18,17 @@ const AppHeader = ({ burgerIsOpen }) => (
       <Link to="/">
         <img className="header-logo" src={logo} alt="Logo KCD" />
       </Link>
-      <LoginButton />
+      <div className="connect">
+        {isLogged && (
+        <div className="connect-container">
+          <Link to="/mon-profil">
+            <AccountCircleIcon fontSize="large" className="connect-buttonProfil" />
+          </Link>
+          <p className="connect-salutation">{`Bonjour ${userPseudo}`}</p>
+        </div>
+        )}
+        <LoginButton />
+      </div>
     </div>
     <Nav />
   </header>
@@ -25,6 +36,8 @@ const AppHeader = ({ burgerIsOpen }) => (
 
 AppHeader.propTypes = {
   burgerIsOpen: PropTypes.bool,
+  isLogged: PropTypes.bool.isRequired,
+  userPseudo: PropTypes.string.isRequired,
 };
 
 AppHeader.defaultProps = {

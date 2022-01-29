@@ -1,0 +1,51 @@
+@use 'src/styles/vars';
+
+.myFamilyPage {
+  background-image: url('/public/images/background.jpg');
+  background-size: cover;
+  padding-top: 180px;
+  min-height: 100vh;
+
+  @media (max-width:425px){
+    padding-top: 100px;
+  }
+
+  &-form {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    max-width: 700px;
+    width: 90%;
+    border: vars.$colorPrimary solid 1px;
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (max-width:425px){
+      padding: 1rem;
+    }
+
+    &-button {
+      margin-top: 1rem;
+    }
+  }
+
+  &-title {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  &-container {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-select {
+    margin-bottom: 1rem;
+    width: 120px;
+    height: 40px;
+    padding: .5rem;
+  }
+}

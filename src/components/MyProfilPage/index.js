@@ -1,21 +1,19 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import PropTypes from 'prop-types';
 
 import './style.scss';
+import HeaderMyProfilPage from '../HeaderMyProfilPage';
 
-const MyProfilPage = ({ isLogged, userPseudo }) => (
-  <main className="myProfilPage">
-    {isLogged && (
-      <div className="myProfilPage-salutation">
-        <p>{`Bonjour ${userPseudo}`}</p>
-      </div>
-    )}
-  </main>
+const MyProfilPage = () => (
+  <div className="myProfilPage">
+    <h1 className="myProfilPage-title">Mon profil</h1>
+    <HeaderMyProfilPage />
+  </div>
 );
 
 MyProfilPage.propTypes = {
-  isLogged: PropTypes.bool.isRequired,
-  userPseudo: PropTypes.string.isRequired,
+
 };
 
 export default MyProfilPage;

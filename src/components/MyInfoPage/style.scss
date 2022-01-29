@@ -1,0 +1,56 @@
+@use 'src/styles/vars';
+.myInfoPage {
+  background-image: url('/public/images/background.jpg');
+  background-size: cover;
+  padding-top: 180px;
+  min-height: 100vh;
+
+  @media (max-width:425px){
+    padding-top: 100px;
+  }
+
+  &-form {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    border: vars.$colorPrimary solid 1px;
+    margin: 4rem auto;
+    padding: 1.5rem 0;
+    max-width: 830px;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+
+    &-button {
+      margin: 2rem auto;
+    }
+  }
+}
+
+.sectionLeft {
+  margin: auto;
+  max-width: 350px;
+  width: 100%;
+  margin: 0 2rem;
+
+  &-input {
+  max-width: 100%;
+  }
+}
+
+.sectionRight {
+  margin: 0 auto;
+  max-width: 350px;
+  width: 100%;
+  margin: 0 2rem;
+
+  &-input {
+  max-width: 100%;
+  }
+}
+
+
+
+
+
+
