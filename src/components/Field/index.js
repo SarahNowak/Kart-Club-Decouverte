@@ -27,7 +27,6 @@ const Field = ({
         id={inputId}
         placeholder={placeholder}
         type={type}
-        required
       />
 
       <label

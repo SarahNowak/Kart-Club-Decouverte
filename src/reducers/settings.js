@@ -1,9 +1,11 @@
-import { TOGGLE_BURGER_ISOPEN, SET_HTTP_ERROR_MESSAGE } from 'src/actions/settings';
+import { TOGGLE_BURGER_ISOPEN, SET_HTTP_ERROR_MESSAGE, SET_SHOW_CONFIRMATION_MESSAGE } from 'src/actions/settings';
 
 export const initialState = {
   burgerIsOpen: false,
   httpErrorMessage: '',
   showHttpErrorMessage: false,
+  showConfirmationMessage: false,
+
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -18,6 +20,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         showHttpErrorMessage: action.showMessage,
         httpErrorMessage: action.httpErrorMessage,
+      };
+    case SET_SHOW_CONFIRMATION_MESSAGE:
+      return {
+        ...state,
+        showConfirmationMessage: action.bool,
       };
     default:
       return state;

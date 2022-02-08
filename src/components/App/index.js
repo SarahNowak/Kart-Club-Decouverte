@@ -17,6 +17,8 @@ import TripsList from 'src/containers/TripsList';
 import Login from 'src/containers/Login';
 import Registration from 'src/containers/Registration';
 import MyProfilPage from 'src/components/MyProfilPage';
+import MyInfoPage from 'src/containers/MyInfoPage';
+import ConfirmationMessage from 'src/containers/ConfirmationMessage';
 import Home from '../Home';
 import Footer from '../Footer';
 import Error from '../Error';
@@ -24,7 +26,6 @@ import AssociationPage from '../AssociationPage';
 import BecomeMember from '../BecomeMember';
 import OurPartners from '../OurPartners';
 import Subscribe from '../Subscribe';
-import MyInfoPage from '../MyInfoPage';
 import MyFamilyPage from '../MyFamilyPage';
 import MyTripsPage from '../MyTripsPage';
 
@@ -44,6 +45,7 @@ const App = ({ isLogged, tryAutoconnect }) => {
   return (
     <div className="app">
       <AppHeader />
+      <ConfirmationMessage />
       <Switch>
         <Route path="/" exact>
           <Home />

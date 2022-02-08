@@ -35,10 +35,10 @@ const MyFamilyPage = ({
 );
 
 MyFamilyPage.propTypes = {
-  changeField: PropTypes.func.isRequired,
-  lastNameFamily: PropTypes.string.isRequired,
-  firstNameFamily: PropTypes.string.isRequired,
-  license: PropTypes.string.isRequired,
+  // changeField: PropTypes.func.isRequired,
+  // lastNameFamily: PropTypes.string.isRequired,
+  // firstNameFamily: PropTypes.string.isRequired,
+  // license: PropTypes.string.isRequired,
 };
 
 export default MyFamilyPage;

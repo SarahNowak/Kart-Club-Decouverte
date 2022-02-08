@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import FormBecomeMember from 'src/components/FormBecomeMember';
-import { changeField, resetForm, changePhotoMember } from 'src/actions/formBecomeMember.js';
+import { changeField, resetForm, changePhotoMember } from 'src/actions/formBecomeMember';
 
 const mapStateToProps = (state) => ({
-  lastName: state.formBecomeMember.lastName,
+  name: state.formBecomeMember.name,
   firstName: state.formBecomeMember.firstName,
   adress: state.formBecomeMember.adress,
   postalCode: state.formBecomeMember.postalCode,

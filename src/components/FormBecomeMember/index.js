@@ -11,7 +11,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 const FormBecomeMember = ({
   changeField,
   changePhotoMember,
-  lastName,
+  name,
   firstName,
   adress,
   postalCode,
@@ -26,7 +26,7 @@ const FormBecomeMember = ({
     event.preventDefault();
 
     const messageContact = {
-      lastName,
+      name,
       firstName,
       adress,
       postalCode,
@@ -61,19 +61,19 @@ const FormBecomeMember = ({
       <form className="formBecomeMember-form" onSubmit={sendEmail}>
         <section className="sectionLeft">
           <div className="sectionLeft-input">
-            <Field inputFor="lastName" onChange={changeField} placeholder="Nom" value={lastName} type="text" />
-            <Field inputFor="firstName" onChange={changeField} placeholder="Prénom" value={firstName} type="text" />
-            <Field inputFor="adress" onChange={changeField} placeholder="Adresse" value={adress} type="text" />
-            <Field inputFor="postalCode" onChange={changeField} placeholder="Code postal" value={postalCode} type="text" />
-            <Field inputFor="city" onChange={changeField} placeholder="Ville" value={city} type="text" />
+            <Field required inputFor="name" onChange={changeField} placeholder="Nom" value={name} type="text" />
+            <Field required inputFor="firstName" onChange={changeField} placeholder="Prénom" value={firstName} type="text" />
+            <Field required inputFor="adress" onChange={changeField} placeholder="Adresse" value={adress} type="text" />
+            <Field required inputFor="postalCode" onChange={changeField} placeholder="Code postal" value={postalCode} type="text" />
+            <Field required inputFor="city" onChange={changeField} placeholder="Ville" value={city} type="text" />
           </div>
         </section>
         <section className="sectionRight">
           <div className="sectionRight-input">
-            <Field inputFor="email" onChange={changeField} placeholder="Adresse mail" value={email} type="email" />
-            <Field inputFor="number" onChange={changeField} placeholder="Téléphone" value={number} type="tel" maxlenght="10" />
+            <Field required inputFor="email" onChange={changeField} placeholder="Adresse mail" value={email} type="email" />
+            <Field required inputFor="number" onChange={changeField} placeholder="Téléphone" value={number} type="tel" maxlenght="10" />
             <label>Veuillez saisir votre date de naissance</label>
-            <Field inputFor="dateOfBirth" onChange={changeField} placeholder="Date de naissance" value={dateOfBirth} type="date" />
+            <Field required inputFor="dateOfBirth" onChange={changeField} placeholder="Date de naissance" value={dateOfBirth} type="date" />
             <label htmlFor="avatarPicture" className="newAvatarForm-label">
               Photo(carte de membre)
             </label>
@@ -117,7 +117,7 @@ FormBecomeMember.propTypes = {
   resetForm: PropTypes.func.isRequired,
   changeField: PropTypes.func.isRequired,
   changePhotoMember: PropTypes.func.isRequired,
-  lastName: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   firstName: PropTypes.string.isRequired,
   adress: PropTypes.string.isRequired,
   postalCode: PropTypes.string.isRequired,

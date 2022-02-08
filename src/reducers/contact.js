@@ -1,4 +1,4 @@
-import { CHANGE_FIELD, RESET_FORM, VERIFIED_RECAPTCHA } from '../actions/contact';
+import { CHANGE_FIELD, RESET_FORM } from '../actions/contact';
 
 export const initialState = {
   emailContact: '',

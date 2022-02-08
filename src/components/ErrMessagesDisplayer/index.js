@@ -1,9 +1,6 @@
 import React from 'react';
-
 import ErrMessage from 'src/components/ErrMessagesDisplayer/ErrMessage';
-
 import PropTypes from 'prop-types';
-
 import './style.scss';
 
 const ErrMessagesDisplayer = ({

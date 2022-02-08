@@ -1,9 +1,10 @@
 import { VERIFIED_RECAPTCHA } from 'src/actions/contact';
 import { CREATE_USER_IN_DB, toggleLoadingSubmitStatus, resetUserRegistrationForm } from 'src/actions/registration';
-import { setHttpErrorMessage } from 'src/actions/settings';
+import { setShowConfirmationMessage, setHttpErrorMessage } from 'src/actions/settings';
 import { customErrorMessage } from 'src/utils/customErrorMessage';
 import { connectUser, CONNECT_USER, resetUserLoginForm } from '../actions/login';
 import {
+  EDIT_USER_IN_DB,
   getUserData,
   GET_USER_DATA,
   login,
@@ -17,7 +18,7 @@ const ajax = (store) => (next) => async (action) => {
   const localUrl = 'http://localhost:8000';
   const serverUrl = 'http://ec2-18-117-83-12.us-east-2.compute.amazonaws.com/kart_club_decouverte_back/public';
 
-  const rootUrl = serverUrl;
+  const rootUrl = localUrl;
 
   switch (action.type) {
     case VERIFIED_RECAPTCHA: {
@@ -181,6 +182,53 @@ const ajax = (store) => (next) => async (action) => {
         console.error(error);
       }
 
+      next(action);
+      break;
+    }
+
+    // This action will trigger the http request to edit info user in db
+    case EDIT_USER_IN_DB: {
+      const Endpoint = `/api/user/${action.editedUser.userToEdit}`;
+
+      const myHeaders = new Headers();
+      myHeaders.append('Content-Type', 'application/json');
+
+      const token = `Bearer ${localStorage.getItem('token')}`;
+      myHeaders.append('Authorization', token);
+
+      const data = {
+        lastName: action.editedUser.lastName,
+        firstName: action.editedUser.firstName,
+        adress: action.editedUser.adress,
+        postalCode: action.editedUser.postalCode,
+        city: action.editedUser.city,
+        number: action.editedUser.number,
+        email: action.editedUser.email,
+        license: action.editedUser.license,
+      };
+      const fetchOptions = {
+        method: 'PUT',
+        mode: 'cors',
+        cache: 'no-cache',
+        headers: myHeaders,
+        body: JSON.stringify(data),
+      };
+      try {
+        console.log(`ajax middleware -> Init Ajax request on ${Endpoint}`);
+
+        const response = await fetch(rootUrl + Endpoint, fetchOptions);
+        console.log(`Response from api call on ${Endpoint} = `, response);
+
+        if (response.ok) {
+          store.dispatch(getUserData());
+          store.dispatch(setShowConfirmationMessage(true));
+          next(action);
+          break;
+        }
+      }
+      catch (error) {
+        console.error(error);
+      }
       next(action);
       break;
     }

@@ -64,11 +64,11 @@ const Contact = ({
       <form className="contact-form" onSubmit={sendEmail}>
         <section className="section-form">
           <div className="form-input">
-            <Field inputFor="lastNameContact" placeholder="Nom" type="text" onChange={changeField} value={lastNameContact} />
-            <Field inputFor="firstNameContact" placeholder="Prénom" type="text" onChange={changeField} value={firstNameContact} />
-            <Field inputFor="emailContact" placeholder="Adresse mail" type="email" onChange={changeField} value={emailContact} />
+            <Field required inputFor="lastNameContact" placeholder="Nom" type="text" onChange={changeField} value={lastNameContact} />
+            <Field required inputFor="firstNameContact" placeholder="Prénom" type="text" onChange={changeField} value={firstNameContact} />
+            <Field required inputFor="emailContact" placeholder="Adresse mail" type="email" onChange={changeField} value={emailContact} />
           </div>
-          <FieldArea inputFor="messageContact" placeholder="Votre message" onChange={changeField} value={messageContact} />
+          <FieldArea required inputFor="messageContact" placeholder="Votre message" onChange={changeField} value={messageContact} />
         </section>
         <ReCAPTCHA
           sitekey="6LeGUgAdAAAAADec8UUJZ5EjskTj38pGNv_zX8TI"

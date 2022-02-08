@@ -1,7 +1,7 @@
 import { CHANGE_FIELD, RESET_FORM, CHANGE_PHOTO_MEMBER } from '../actions/formBecomeMember';
 
 export const initialState = {
-  lastName: '',
+  name: '',
   firstName: '',
   adress: '',
   postalCode: '',

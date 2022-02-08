@@ -9,3 +9,9 @@ export const setHttpErrorMessage = (showMessage, httpErrorMessage) => ({
   showMessage,
   httpErrorMessage,
 });
+
+export const SET_SHOW_CONFIRMATION_MESSAGE = 'SET_SHOW_CONFIRMATION_MESSAGE';
+export const setShowConfirmationMessage = (bool) => ({
+  type: SET_SHOW_CONFIRMATION_MESSAGE,
+  bool,
+});
