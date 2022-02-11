@@ -4,6 +4,11 @@ import { setShowConfirmationMessage, setHttpErrorMessage } from 'src/actions/set
 import { customErrorMessage } from 'src/utils/customErrorMessage';
 import { connectUser, CONNECT_USER, resetUserLoginForm } from '../actions/login';
 import {
+  ADD_MEMBER_FAMILY_IN_DB,
+  resetMemberFamilyForm,
+} from '../actions/memberFamilyRegistration';
+
+import {
   EDIT_USER_IN_DB,
   getUserData,
   GET_USER_DATA,
@@ -229,6 +234,57 @@ const ajax = (store) => (next) => async (action) => {
       catch (error) {
         console.error(error);
       }
+      next(action);
+      break;
+    }
+
+    // This action will trigger the http request to add a new memberFamily in db
+    case ADD_MEMBER_FAMILY_IN_DB: {
+      const Endpoint = '/api/memberfamily/create';
+      const myHeaders = new Headers();
+
+      myHeaders.append('Content-Type', 'application/json');
+
+      const userData = {
+        lastName: action.newMemberFamily.lastName,
+        firstName: action.newMemberFamily.firstName,
+        license: action.newMemberFamily.license,
+        user: action.newMemberFamily.user,
+      };
+
+      const fetchOptions = {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        headers: myHeaders,
+        body: JSON.stringify(userData),
+      };
+
+      try {
+        const response = await fetch(rootUrl + Endpoint, fetchOptions);
+
+        if (response.ok) {
+          const data = await response.json();
+          console.log(`New MemberFamily created next to api call on ${Endpoint} = `, data);
+          store.dispatch(resetMemberFamilyForm());
+          store.dispatch(getUserData());
+          store.dispatch(setShowConfirmationMessage(true));
+          return true;
+        }
+        console.error(`Erreur du serveur : ${response.status}`);
+
+        if (response.status === 400) {
+          const data = await response.json();
+          const workaroundMessage = customErrorMessage(data.errors);
+          store.dispatch(setHttpErrorMessage(true, workaroundMessage));
+          return true;
+        }
+      }
+
+      catch (error) {
+        console.error(error);
+      }
+
       next(action);
       break;
     }

@@ -8,6 +8,7 @@ import formBecomeMemberReducer from './formBecomeMember';
 import registrationReducer from './registration';
 import loginReducer from './login';
 import userReducer from './user';
+import memberFamilyRegistrationReducer from './memberFamilyRegistration';
 
 export const rootReducer = combineReducers({
   settings: settingsReducer,
@@ -18,6 +19,8 @@ export const rootReducer = combineReducers({
   registration: registrationReducer,
   login: loginReducer,
   user: userReducer,
+  memberFamilyRegistration: memberFamilyRegistrationReducer,
+
 });
 
 export default rootReducer;
