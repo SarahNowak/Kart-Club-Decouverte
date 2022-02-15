@@ -11,7 +11,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 const FormBecomeMember = ({
   changeField,
   changePhotoMember,
-  name,
+  lastName,
   firstName,
   adress,
   postalCode,
@@ -26,7 +26,7 @@ const FormBecomeMember = ({
     event.preventDefault();
 
     const messageContact = {
-      name,
+      lastName,
       firstName,
       adress,
       postalCode,
@@ -61,7 +61,7 @@ const FormBecomeMember = ({
       <form className="formBecomeMember-form" onSubmit={sendEmail}>
         <section className="sectionLeft">
           <div className="sectionLeft-input">
-            <Field required inputFor="name" onChange={changeField} placeholder="Nom" value={name} type="text" />
+            <Field required inputFor="lastName" onChange={changeField} placeholder="Nom" value={lastName} type="text" />
             <Field required inputFor="firstName" onChange={changeField} placeholder="Prénom" value={firstName} type="text" />
             <Field required inputFor="adress" onChange={changeField} placeholder="Adresse" value={adress} type="text" />
             <Field required inputFor="postalCode" onChange={changeField} placeholder="Code postal" value={postalCode} type="text" />
@@ -117,7 +117,7 @@ FormBecomeMember.propTypes = {
   resetForm: PropTypes.func.isRequired,
   changeField: PropTypes.func.isRequired,
   changePhotoMember: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
   firstName: PropTypes.string.isRequired,
   adress: PropTypes.string.isRequired,
   postalCode: PropTypes.string.isRequired,

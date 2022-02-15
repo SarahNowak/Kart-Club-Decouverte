@@ -10,3 +10,13 @@ export const changeValueInTripsForm = (key, value) => ({
   key: key,
   value: value,
 });
+
+export const GET_TRIPS_FROM_API = 'GET_TRIPS_FROM_API';
+export const getTripsFromAPI = () => ({
+  type: GET_TRIPS_FROM_API,
+});
+
+export const TOGGLE_LOADING_TRIPS_STATUS = 'TOGGLE_LOADING_TRIPS_STATUS';
+export const toggleLoadingTripsStatus = () => ({
+  type: TOGGLE_LOADING_TRIPS_STATUS,
+});

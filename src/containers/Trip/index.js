@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-
 import Trip from 'src/components/Trip';
-
 import { findTrip } from 'src/selectors';
 
 const mapStateToProps = (state, ownProps) => ({
   trip: findTrip(state.trips.listOfTrips, ownProps.match.params.id),
+  listOfTrips: state.trips.listOfTrips,
 });
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+
+};
 
 const container = connect(mapStateToProps, mapDispatchToProps)(Trip);
 // on enrichi le conteneur avec des props liés à l'url

@@ -1,5 +1,5 @@
 export const createThreeLastTrips = (allTrips) => {
-  const threeLastTrips = allTrips.slice(1, 4);
+  const threeLastTrips = allTrips.slice(0, 3);
   return threeLastTrips;
 };
 

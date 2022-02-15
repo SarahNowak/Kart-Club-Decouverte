@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import CardTrip from 'src/components/CardTrip';
+import Loading from 'src/components/Loading';
 import { createListSearchedTrips } from 'src/selectors/index';
 
 import './style.scss';
 import Search from 'src/containers/Search';
 
-const TripsList = ({ listOfTrips, searchedWord }) => {
+const TripsList = ({ listOfTrips, searchedWord, loading }) => {
   let filteredTrips = [];
 
   if (searchedWord) {
@@ -15,6 +16,12 @@ const TripsList = ({ listOfTrips, searchedWord }) => {
   }
   else {
     filteredTrips = listOfTrips;
+  }
+
+  if (loading) {
+    return (
+      <main><Loading /></main>
+    );
   }
 
   return (
@@ -37,6 +44,7 @@ const TripsList = ({ listOfTrips, searchedWord }) => {
 TripsList.propTypes = {
   listOfTrips: PropTypes.array.isRequired,
   searchedWord: PropTypes.string,
+  loading: PropTypes.bool.isRequired,
 };
 
 TripsList.defaultProps = {

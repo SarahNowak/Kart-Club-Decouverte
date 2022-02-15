@@ -25,6 +25,7 @@
       padding: 1rem;
     }
 
+
     &-button {
       margin-top: 1rem;
     }
@@ -48,4 +49,8 @@
     height: 40px;
     padding: .5rem;
   }
+}
+
+.form-input {
+  min-width: 250px;
 }

@@ -20,7 +20,7 @@ import MyProfilPage from 'src/components/MyProfilPage';
 import MyInfoPage from 'src/containers/MyInfoPage';
 import ConfirmationMessage from 'src/containers/ConfirmationMessage';
 import MyFamilyPage from 'src/containers/MyFamilyPage';
-import Home from '../Home';
+import Home from 'src/containers/Home';
 import Footer from '../Footer';
 import Error from '../Error';
 import AssociationPage from '../AssociationPage';
@@ -30,17 +30,15 @@ import Subscribe from '../Subscribe';
 import MyTripsPage from '../MyTripsPage';
 
 // == Composant
-const App = ({ isLogged, tryAutoconnect }) => {
-  // je rend mon composant dépendant de l'adresse actuelle
-  // il sera rerendu chaque fois que l'adresse change
-  const location = useLocation();
-  // pour chaque rendu ou location (l'adresse) change
-  useEffect(() => {
-    // je reviens en haut
-    window.scroll(0, 0);
-  }, [location]);
+const App = ({ getTrips, isLogged, tryAutoconnect }) => {
+  useEffect(getTrips, []);
 
   useEffect(tryAutoconnect, []);
+
+  const location = useLocation();
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, [location]);
 
   return (
     <div className="app">
@@ -104,6 +102,7 @@ const App = ({ isLogged, tryAutoconnect }) => {
 App.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   tryAutoconnect: PropTypes.func.isRequired,
+  getTrips: PropTypes.func.isRequired,
 };
 
 App.defaultProps = {

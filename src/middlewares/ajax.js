@@ -7,6 +7,7 @@ import {
   ADD_MEMBER_FAMILY_IN_DB,
   resetMemberFamilyForm,
 } from '../actions/memberFamilyRegistration';
+import { GET_TRIPS_FROM_API, toggleLoadingTripsStatus, storeListOfTrips } from '../actions/trips';
 
 import {
   EDIT_USER_IN_DB,
@@ -49,6 +50,7 @@ const ajax = (store) => (next) => async (action) => {
       if (humanKey === null || !isHuman) {
         throw new Error('YOU ARE NOT A HUMAN.');
       }
+      next(action);
       break;
     }
 
@@ -285,6 +287,45 @@ const ajax = (store) => (next) => async (action) => {
         console.error(error);
       }
 
+      next(action);
+      break;
+    }
+
+    // This action will trigger the http request to the api to collect trips
+    case GET_TRIPS_FROM_API: {
+      const Endpoint = '/api/trips';
+
+      const myHeaders = new Headers();
+      myHeaders.append('Content-Type', 'application/json');
+
+      const fetchOptions = {
+        method: 'GET',
+        mode: 'cors',
+        cache: 'no-cache',
+        headers: myHeaders,
+      };
+
+      try {
+        console.log(`ajax middleware -> Init Ajax request on ${Endpoint}`);
+        store.dispatch(toggleLoadingTripsStatus());
+        const response = await fetch(rootUrl + Endpoint, fetchOptions);
+
+        console.log(`Response from api call on ${Endpoint} = `, response);
+
+        if (response.ok) {
+          const data = await response.json();
+          console.log('Trips collected from api call = ', data);
+          store.dispatch(storeListOfTrips(data));
+          store.dispatch(toggleLoadingTripsStatus());
+          return true;
+        }
+
+        store.dispatch(toggleLoadingTripsStatus());
+        console.error(`Erreur du serveur : ${response.status}`);
+      }
+      catch (error) {
+        console.error(error);
+      }
       next(action);
       break;
     }

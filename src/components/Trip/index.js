@@ -6,12 +6,18 @@ import './style.scss';
 import { Link, useLocation } from 'react-router-dom';
 import Map from 'src/components/Map';
 import { createTripOfMonth } from 'src/selectors';
-import trips from 'src/trips';
+import Loading from 'src/components/Loading';
 
-const Trip = ({ trip }) => {
-  const tripOfMonth = createTripOfMonth(trips);
+const Trip = ({ trip, listOfTrips }) => {
+  const tripOfMonth = createTripOfMonth(listOfTrips);
+
+  if (!trip) {
+    return (
+      <main><Loading /></main>
+    );
+  }
+
   const location = useLocation();
-
   useEffect(() => {
     document.querySelector('meta[name="url"]').setAttribute('content', document.location);
     document.querySelector('meta[name="image"]').setAttribute('content', `https://kart-club-decouverte.surge.sh/images/${trip.imgCard}`);
@@ -29,8 +35,8 @@ const Trip = ({ trip }) => {
       <h1 className="trip-title">{trip.circuit}</h1>
       <div className="trip-container">
         <div className="trip-container-image">
-          {trip.photosTrip.map((info) => (
-            <img key={info} className="trip-image" src={`/images/${info}`} alt="Circuit" />
+          {trip.photosTrip.map((photosTrip) => (
+            <img key={photosTrip} className="trip-image" src={`/images/${photosTrip}`} alt="Circuit" />
           ))}
         </div>
         <section className="section-container">
@@ -40,9 +46,9 @@ const Trip = ({ trip }) => {
                 {trip.title}
               </h2>
               <div className="trip-summary-description">
-                {trip.description.map((info) => (
-                  <ul key={info}>
-                    <li>{info} </li>
+                {trip.description.map((description) => (
+                  <ul key={description}>
+                    <li>{description} </li>
                   </ul>
                 ))}
               </div>
@@ -58,33 +64,33 @@ const Trip = ({ trip }) => {
               </h3>
               <div className="trip-formul-adult">
                 <span className="trip-class-adult">ADULTES : à partir de {trip.classAdult} ans : Matériel {trip.materialAdult}</span>
-                {trip.sessionAdult.map((info) => (
-                  <ul key={info}>
-                    <li>{info}</li>
+                {trip.sessionAdult.map((sessionAdult) => (
+                  <ul key={sessionAdult}>
+                    <li>{sessionAdult}</li>
                   </ul>
                 ))}
                 <span className="trip-tarif-adult"> Tarif membre : {trip.tarifAdultMember}€  – Tarif extérieur : {trip.tarifAdultExt}€ – Plein tarif : {trip.tarifAdult}€ </span>
               </div>
-              { trip.classYoung !== ''
+              { trip.classYoung != null
                 ? (
                   <div className="trip-formul-young">
                     <span className="trip-class-young">JEUNES : à partir de {trip.classYoung} ans : Matériel {trip.materialYoung} </span>
-                    {trip.sessionYoung.map((info) => (
-                      <ul key={info}>
-                        <li>{info}</li>
+                    {trip.sessionYoung.map((sessionYoung) => (
+                      <ul key={sessionYoung}>
+                        <li>{sessionYoung}</li>
                       </ul>
                     ))}
                     <span className="trip-tarif-young">Tarif membre : {trip.tarifYoungMember}€  – Tarif extérieur : {trip.tarifYoungExt}€ – Plein tarif : {trip.tarifYoung}€</span>
                   </div>
                 )
                 : ''}
-              { trip.classMinJunior !== ''
+              { trip.classMinJunior != null
                 ? (
                   <div className="trip-formul-junior">
                     <span className="trip-class-junior">JUNIORS : de {trip.classMinJunior} à {trip.classMaxJunior} ans :  Matériel {trip.materialJunior} </span>
-                    {trip.sessionJunior.map((info) => (
-                      <ul key={info}>
-                        <li>{info}</li>
+                    {trip.sessionJunior.map((sessionJunior) => (
+                      <ul key={sessionJunior}>
+                        <li>{sessionJunior}</li>
                       </ul>
                     ))}
                     <span className="trip-tarif-junior">Tarif membre : {trip.tarifJuniorMember}€  – Tarif extérieur : {trip.tarifJuniorExt}€ – Plein tarif : {trip.tarifJunior}€</span>
@@ -143,6 +149,7 @@ Trip.propTypes = {
     coordinates: PropTypes.array.isRequired,
     date: PropTypes.string,
   }),
+  listOfTrips: PropTypes.array.isRequired,
 };
 
 Trip.defaultProps = {

@@ -3,15 +3,15 @@ import FormBecomeMember from 'src/components/FormBecomeMember';
 import { changeField, resetForm, changePhotoMember } from 'src/actions/formBecomeMember';
 
 const mapStateToProps = (state) => ({
-  name: state.formBecomeMember.name,
-  firstName: state.formBecomeMember.firstName,
-  adress: state.formBecomeMember.adress,
-  postalCode: state.formBecomeMember.postalCode,
-  city: state.formBecomeMember.city,
-  email: state.formBecomeMember.email,
-  number: state.formBecomeMember.number,
-  dateOfBirth: state.formBecomeMember.dateOfBirth,
-  photoMember: state.formBecomeMember.photoMember,
+  lastName: state.formBecomeMember.lastNameBecomeMember,
+  firstName: state.formBecomeMember.firstNameBecomeMember,
+  adress: state.formBecomeMember.adressBecomeMember,
+  postalCode: state.formBecomeMember.postalCodeBecomeMember,
+  city: state.formBecomeMember.cityBecomeMember,
+  email: state.formBecomeMember.emailBecomeMember,
+  number: state.formBecomeMember.numberBecomeMember,
+  dateOfBirth: state.formBecomeMember.dateOfBirthBecomeMember,
+  photoMember: state.formBecomeMember.photoMemberBecomeMember,
 });
 
 const mapDispatchToProps = (dispatch) => ({

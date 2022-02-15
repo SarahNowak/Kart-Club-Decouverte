@@ -2,15 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './style.scss';
+import Loading from 'src/components/Loading';
 import { createThreeLastTrips, createTripOfMonth } from 'src/selectors';
-import trips from 'src/trips';
 import TripInProgress from '../TripInProgress';
 import Presentation from '../Presentation';
 import CardTrip from '../CardTrip';
 
-const Home = () => {
-  const threeLastTrips = createThreeLastTrips(trips);
-  const tripOfMonth = createTripOfMonth(trips);
+const Home = ({ listOfTrips }) => {
+  const threeLastTrips = createThreeLastTrips(listOfTrips);
+  const tripOfMonth = createTripOfMonth(listOfTrips);
+
+  if (!listOfTrips) {
+    return (
+      <main><Loading /></main>
+    );
+  }
 
   return (
     <main>
@@ -39,6 +45,7 @@ const Home = () => {
 };
 
 Home.propTypes = {
+  listOfTrips: PropTypes.array.isRequired,
 
 };
 

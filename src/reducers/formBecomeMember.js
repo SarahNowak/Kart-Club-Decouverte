@@ -1,15 +1,15 @@
 import { CHANGE_FIELD, RESET_FORM, CHANGE_PHOTO_MEMBER } from '../actions/formBecomeMember';
 
 export const initialState = {
-  name: '',
-  firstName: '',
-  adress: '',
-  postalCode: '',
-  city: '',
-  email: '',
-  number: '',
-  dateOfBirth: '',
-  photoMember: '',
+  lastNameBecomeMember: '',
+  firstNameBecomeMember: '',
+  adressBecomeMember: '',
+  postalCodeBecomeMember: '',
+  cityBecomeMember: '',
+  emailBecomeMember: '',
+  numberBecomeMember: '',
+  dateOfBirthBecomeMember: '',
+  photoMemberBecomeMember: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
