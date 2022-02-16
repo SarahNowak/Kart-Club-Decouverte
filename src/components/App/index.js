@@ -26,8 +26,8 @@ import Error from '../Error';
 import AssociationPage from '../AssociationPage';
 import BecomeMember from '../BecomeMember';
 import OurPartners from '../OurPartners';
-import Subscribe from '../Subscribe';
 import MyTripsPage from '../MyTripsPage';
+import SubscribeMonthTrip from '../SubscribeMonthTrip';
 
 // == Composant
 const App = ({ getTrips, isLogged, tryAutoconnect }) => {
@@ -70,7 +70,7 @@ const App = ({ getTrips, isLogged, tryAutoconnect }) => {
           <WhoWeAre />
         </Route>
         <Route path="/inscription-sortie" exact>
-          <Subscribe />
+          {!isLogged ? <Login /> : <SubscribeMonthTrip />}
         </Route>
         <Route path="/connexion" exact>
           {!isLogged ? <Login /> : <Redirect to="mon-profil" />}
