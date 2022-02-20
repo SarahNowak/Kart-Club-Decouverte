@@ -7,6 +7,10 @@ import {
   ADD_MEMBER_FAMILY_IN_DB,
   resetMemberFamilyForm,
 } from '../actions/memberFamilyRegistration';
+import {
+  REGISTER_USER_TRIP_IN_DB,
+  UNREGISTER_USER_TRIP_IN_DB,
+} from '../actions/signUpForTrip';
 import { GET_TRIPS_FROM_API, toggleLoadingTripsStatus, storeListOfTrips } from '../actions/trips';
 
 import {
@@ -329,6 +333,79 @@ const ajax = (store) => (next) => async (action) => {
       next(action);
       break;
     }
+
+    // This action will trigger the http request to subscribe a user to a trip
+    case REGISTER_USER_TRIP_IN_DB: {
+      const Endpoint = `/api/trips/subscribe/${action.tripId}`;
+      const token = `Bearer ${localStorage.getItem('token')}`;
+      const myHeaders = new Headers();
+      myHeaders.append('Content-Type', 'application/json');
+      myHeaders.append('Accept', 'application/json');
+      myHeaders.append('Authorization', token);
+      const tripData = {
+        user: action.userId,
+        trips: action.tripId,
+      };
+      console.log(tripData);
+      const fetchOptions = {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        headers: myHeaders,
+        body: JSON.stringify(tripData),
+      };
+      try {
+        const response = await fetch(rootUrl + Endpoint, fetchOptions);
+        console.log(`Response from api call on ${Endpoint} = `, response);
+        if (response.ok) {
+          const data = await response.json();
+          console.log(data);
+          store.dispatch(setShowConfirmationMessage(true));
+          store.dispatch(getUserData());
+          return true;
+        }
+        console.error(`Erreur du serveur : ${response.status}`);
+      }
+      catch (error) {
+        console.error(error);
+      }
+      next(action);
+      break;
+    }
+
+    // This action will trigger the http request to unregistrer a user to a trip
+    case UNREGISTER_USER_TRIP_IN_DB: {
+      const Endpoint = `/api/trips/subscribe/${action.tripId}`;
+      const myHeaders = new Headers();
+      myHeaders.append('Content-Type', 'application/json');
+      myHeaders.append('Accept', 'application/json');
+      const token = `Bearer ${localStorage.getItem('token')}`;
+      myHeaders.append('Authorization', token);
+      const fetchOptions = {
+        method: 'DELETE',
+        mode: 'cors',
+        cache: 'no-cache',
+        headers: myHeaders,
+      };
+      try {
+        const response = await fetch(rootUrl + Endpoint, fetchOptions);
+        console.log(`Response from api call on ${Endpoint} = `, response);
+
+        if (response.status == 204) {
+          // const data = await response.json();
+          store.dispatch(setShowConfirmationMessage(true));
+          store.dispatch(getUserData());
+          return true;
+        }
+        console.error(`Erreur du serveur : ${response.status}`);
+      }
+      catch (error) {
+        console.error(error);
+      }
+      next(action);
+      break;
+    }
+
     default:
       next(action);
   }

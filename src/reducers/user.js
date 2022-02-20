@@ -18,7 +18,8 @@ export const initialState = {
   city: '',
   number: '',
   license: '',
-  memberFamily: '',
+  memberFamily: [],
+  trips: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -53,6 +54,7 @@ const reducer = (state = initialState, action = {}) => {
         number: action.data.number,
         license: action.data.license,
         memberFamily: action.data.memberFamily,
+        trips: action.data.trip,
       };
     case CHANGE_FIELD:
       return {
@@ -72,6 +74,7 @@ const reducer = (state = initialState, action = {}) => {
         email: action.userEmail,
         license: action.userLicense,
       };
+
     default:
       return state;
   }
