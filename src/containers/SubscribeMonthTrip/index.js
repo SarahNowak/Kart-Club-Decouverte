@@ -1,12 +1,18 @@
 import { connect } from 'react-redux';
 import SubscribeMonthTrip from 'src/components/SubscribeMonthTrip';
-import { registerUserTripInDB, unRegisterUserTripInDB } from '../../actions/signUpForTrip';
+import {
+  registerMemberFamilyTripInDB,
+  registerUserTripInDB,
+  unRegisterMemberFamilyTripInDB,
+  unRegisterUserTripInDB,
+
+} from '../../actions/signUpForTrip';
 import { findIdTripOfMonth } from '../../selectors';
 
 const mapStateToProps = (state) => ({
   user: state.user.firstName,
   userId: state.user.id,
-  memberFamily: state.user.memberFamily,
+  membersFamily: state.user.memberFamily,
   tripId: findIdTripOfMonth(state.trips.listOfTrips),
   listOfUserTrip: state.user.trips,
 });
@@ -17,6 +23,12 @@ const mapDispatchToProps = (dispatch) => ({
   },
   unRegisterUserTrip: (userId, tripId) => {
     dispatch(unRegisterUserTripInDB(userId, tripId));
+  },
+  registerMemberFamilyTrip: (memberFamilyId, tripId) => {
+    dispatch(registerMemberFamilyTripInDB(memberFamilyId, tripId));
+  },
+  unRegisterMemberFamilyTrip: (memberFamilyId, tripId) => {
+    dispatch(unRegisterMemberFamilyTripInDB(memberFamilyId, tripId));
   },
 });
 

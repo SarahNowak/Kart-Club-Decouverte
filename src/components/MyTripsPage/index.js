@@ -10,8 +10,6 @@ const MyTripsPage = ({ listOfTrips, listOfUserTrip, tripIdOfMonth }) => {
   const tripOfMonth = createTripOfMonth(listOfTrips);
   const userTripId = listOfUserTrip.map((userTrip) => userTrip.id);
   const listOfLastUserTrips = (createLastUserTrips(listOfUserTrip)).reverse();
-  console.log(listOfUserTrip);
-  console.log(listOfLastUserTrips);
 
   return (
     <main className="myTripsPage">

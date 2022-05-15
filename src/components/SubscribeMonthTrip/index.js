@@ -6,24 +6,40 @@ import { Button } from '@material-ui/core';
 
 const SubscribeMonthTrip = ({
   user,
-  memberFamily,
+  membersFamily,
   userId,
   registerUserTrip,
+  registerMemberFamilyTrip,
   tripId,
   unRegisterUserTrip,
+  unRegisterMemberFamilyTrip,
   listOfUserTrip,
 }) => {
-  const handleSubmitSave = (event) => {
+  const handleSubmitSaveUser = (event) => {
     event.preventDefault();
     registerUserTrip(userId, tripId);
   };
 
-  const handleSubmitUnSave = (event) => {
+  const handleSubmitUnSaveUser = (event) => {
     event.preventDefault();
     unRegisterUserTrip(userId, tripId);
   };
 
+  const handleSubmitSaveMemberFamily = (event) => {
+    event.preventDefault();
+    const memberFamilyId = Number(event.target.value);
+    registerMemberFamilyTrip(memberFamilyId, tripId);
+  };
+
+  const handleSubmitUnSaveMemberFamily = (event) => {
+    event.preventDefault();
+    const memberFamilyId = Number(event.target.value);
+    unRegisterMemberFamilyTrip(memberFamilyId, tripId);
+  };
+
   const userTripId = listOfUserTrip.map((userTrip) => userTrip.id);
+
+  const listMemberFamilyTripId = membersFamily.map((member) => member.trip.id);
 
   return (
     <main className="subscribeMonthTrip">
@@ -38,28 +54,28 @@ const SubscribeMonthTrip = ({
             </label>
             {userTripId.includes(tripId)
               ? (
-                <div type="submit" className="subscribeMonthTrip-formSubmitBtn">
-                  <Button variant="contained" color="primary" onClick={handleSubmitUnSave}>Me désinscrire</Button>
-                </div>
+                <Button variant="contained" color="primary" onClick={handleSubmitUnSaveUser}>Me désinscrire</Button>
               )
               : (
-                <div type="submit" className="subscribeMonthTrip-formSubmitBtn">
-                  <Button variant="contained" color="primary" onClick={handleSubmitSave}>M'inscrire</Button>
-                </div>
+                <Button variant="contained" color="primary" onClick={handleSubmitSaveUser}>M'inscrire</Button>
               )}
           </div>
 
-          {/* {memberFamily.map((member) => (
-            <div className="subscribeMonthTrip-input" key={member.id}>
-              <label htmlFor={member.id}>
-                <input hidden type="text" id={member.id} name={member.firstName} value={member.id} readOnly />
+          {membersFamily.map((member) => (
+            <div className="subscribeMonthTrip-input" key={member.id} value={member.id}>
+              <label htmlFor={member.firstName} value={member.id}>
+                <input hidden type="text" id={member.firstName} name={member.firstName} value={member.id} readOnly />
                 {member.firstName}
               </label>
-              <div type="submit" className="subscribeMonthTrip-formSubmitBtn">
-                <Button variant="contained" color="primary">M'inscrire</Button>
-              </div>
+              {listMemberFamilyTripId.includes(tripId)
+                ? (
+                  <button className="button-memberFamily-subscribeTrip" type="submit" variant="contained" color="primary" value={member.id} onClick={handleSubmitUnSaveMemberFamily}>Me désinscrire</button>
+                )
+                : (
+                  <button className="button-memberFamily-subscribeTrip" type="submit" variant="contained" color="primary" value={member.id} onClick={handleSubmitSaveMemberFamily}>M'inscrire</button>
+                )}
             </div>
-          ))} */}
+          ))}
 
         </div>
       </div>
@@ -69,13 +85,14 @@ const SubscribeMonthTrip = ({
 
 SubscribeMonthTrip.propTypes = {
   user: PropTypes.string.isRequired,
-  // memberFamily: PropTypes.array.isRequired,
+  membersFamily: PropTypes.array.isRequired,
   userId: PropTypes.number.isRequired,
   tripId: PropTypes.number.isRequired,
   registerUserTrip: PropTypes.func.isRequired,
+  registerMemberFamilyTrip: PropTypes.func.isRequired,
+  unRegisterMemberFamilyTrip: PropTypes.func.isRequired,
   unRegisterUserTrip: PropTypes.func.isRequired,
   listOfUserTrip: PropTypes.array.isRequired,
-
 };
 
 export default SubscribeMonthTrip;

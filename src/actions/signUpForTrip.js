@@ -11,3 +11,17 @@ export const unRegisterUserTripInDB = (userId, tripId) => ({
   userId,
   tripId,
 });
+
+export const REGISTER_MEMBERFAMILY_TRIP_IN_DB = 'REGISTER_MEMBERFAMILY_TRIP_IN_DB';
+export const registerMemberFamilyTripInDB = (memberFamilyId, tripId) => ({
+  type: REGISTER_MEMBERFAMILY_TRIP_IN_DB,
+  memberFamilyId,
+  tripId,
+});
+
+export const UNREGISTER_MEMBERFAMILY_TRIP_IN_DB = 'UNREGISTER_MEMBERFAMILY_TRIP_IN_DB';
+export const unRegisterMemberFamilyTripInDB = (memberFamilyId, tripId) => ({
+  type: UNREGISTER_MEMBERFAMILY_TRIP_IN_DB,
+  memberFamilyId,
+  tripId,
+});
