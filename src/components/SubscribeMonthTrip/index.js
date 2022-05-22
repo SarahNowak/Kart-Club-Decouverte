@@ -39,7 +39,10 @@ const SubscribeMonthTrip = ({
 
   const userTripId = listOfUserTrip.map((userTrip) => userTrip.id);
 
-  const listMemberFamilyTripId = membersFamily.map((member) => member.trip.id);
+  // récupérer les membres d'une famille
+  // récupérer les sorties d'un membre
+  // récupérer les id des sorties
+  // comparer avec l'id de la sortie en cours
 
   return (
     <main className="subscribeMonthTrip">
@@ -67,7 +70,7 @@ const SubscribeMonthTrip = ({
                 <input hidden type="text" id={member.firstName} name={member.firstName} value={member.id} readOnly />
                 {member.firstName}
               </label>
-              {listMemberFamilyTripId.includes(tripId)
+              {userTripId.includes(tripId)
                 ? (
                   <button className="button-memberFamily-subscribeTrip" type="submit" variant="contained" color="primary" value={member.id} onClick={handleSubmitUnSaveMemberFamily}>Me désinscrire</button>
                 )

@@ -410,7 +410,7 @@ const ajax = (store) => (next) => async (action) => {
 
     // This action will trigger the http request to subscribe a memberfamily to a trip
     case REGISTER_MEMBERFAMILY_TRIP_IN_DB: {
-      const Endpoint = `/api/trips/subscribe/memberfamily/${action.tripId}`;
+      const Endpoint = `/api/trips/subscribe/${action.tripId}/memberfamily`;
       const token = `Bearer ${localStorage.getItem('token')}`;
       const myHeaders = new Headers();
       myHeaders.append('Content-Type', 'application/json');
@@ -449,17 +449,22 @@ const ajax = (store) => (next) => async (action) => {
 
     // This action will trigger the http request to unregistrer a memberFamily to a trip
     case UNREGISTER_MEMBERFAMILY_TRIP_IN_DB: {
-      const Endpoint = `/api/trips/subscribe/memberfamily/${action.tripId}`;
+      const Endpoint = `/api/trips/subscribe/${action.tripId}/memberfamily`;
       const myHeaders = new Headers();
       myHeaders.append('Content-Type', 'application/json');
       myHeaders.append('Accept', 'application/json');
       const token = `Bearer ${localStorage.getItem('token')}`;
       myHeaders.append('Authorization', token);
+      const tripData = {
+        memberFamily: action.memberFamilyId,
+        trips: action.tripId,
+      };
       const fetchOptions = {
         method: 'DELETE',
         mode: 'cors',
         cache: 'no-cache',
         headers: myHeaders,
+        body: JSON.stringify(tripData),
       };
       try {
         const response = await fetch(rootUrl + Endpoint, fetchOptions);
