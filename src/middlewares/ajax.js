@@ -28,7 +28,7 @@ require('isomorphic-fetch');
 
 const ajax = (store) => (next) => async (action) => {
   const localUrl = 'http://localhost:8000';
-  const serverUrl = 'http://ec2-18-117-83-12.us-east-2.compute.amazonaws.com/kart_club_decouverte_back/public';
+  const serverUrl = 'http://ec2-18.224.172.90.us-east-2.compute.amazonaws.com/kart_club_decouverte_back/public';
 
   const rootUrl = localUrl;
 

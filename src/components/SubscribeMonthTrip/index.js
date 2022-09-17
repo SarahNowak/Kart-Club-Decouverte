@@ -42,6 +42,12 @@ const SubscribeMonthTrip = ({
   // récupérer les membres d'une famille
   // récupérer les sorties d'un membre
   // récupérer les id des sorties
+  const tripsMemberFamily = membersFamily.map((member) => {
+    const listTripMemberFamily = member.trip;
+    const idTripsMemberFamily = listTripMemberFamily.map((trip) => trip.id);
+  });
+
+  console.log(idTripsMemberFamily);
   // comparer avec l'id de la sortie en cours
 
   return (
