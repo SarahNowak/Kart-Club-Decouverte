@@ -30,7 +30,7 @@ const ajax = (store) => (next) => async (action) => {
   const localUrl = 'http://localhost:8000';
   const serverUrl = 'http://ec2-18.224.172.90.us-east-2.compute.amazonaws.com/kart_club_decouverte_back/public';
 
-  const rootUrl = localUrl;
+  const rootUrl = serverUrl;
 
   switch (action.type) {
     case VERIFIED_RECAPTCHA: {
